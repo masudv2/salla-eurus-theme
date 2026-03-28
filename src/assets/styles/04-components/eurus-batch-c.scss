@@ -1,0 +1,69 @@
+/**
+ * Batch C: testimonials, shoppable image, video-product, before-after, newsletter, social gallery.
+ */
+body.is-eurus-home {
+
+  /* ── Testimonials slider active dot ── */
+  .eurus-testimonials-slider {
+    .swiper-pagination-bullet-active,
+    .eurus-dot.is-active {
+      opacity: 1 !important;
+    }
+  }
+
+  /* ── Shoppable image hotspots ── */
+  .eurus-hotspot {
+    transform: translate(-50%, -50%);
+  }
+
+  .eurus-hotspot__pulse {
+    animation: eurusPulse 2s ease-out infinite;
+  }
+
+  @keyframes eurusPulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  /* ── Video embed ── */
+  .eurus-video-wrap {
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
+  }
+
+  /* ── Before / After slider ── */
+  .eurus-ba-card {
+    container-type: inline-size;
+  }
+
+  .eurus-ba-before {
+    will-change: width;
+  }
+
+  .eurus-ba-divider {
+    will-change: left;
+    transition: none;
+  }
+
+  /* ── Newsletter override: style Salla's newsletter input ── */
+  .eurus-newsletter-form {
+    --salla-newsletter-bg: transparent;
+    --salla-newsletter-border-color: rgba(255, 255, 255, 0.4);
+    --salla-newsletter-text-color: #fff;
+    --salla-newsletter-btn-bg: #fff;
+    --salla-newsletter-btn-color: var(--eurus-ink);
+  }
+
+  /* ── Social gallery ── */
+  .eurus-social-photo {
+    &::after {
+      content: '';
+      @apply absolute inset-0 rounded-[var(--eurus-radius-card)] ring-1 ring-inset ring-black/5;
+    }
+  }
+}

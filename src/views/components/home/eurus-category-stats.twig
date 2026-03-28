@@ -1,0 +1,45 @@
+{#
+| Variable         | Type     |
+|------------------|----------|
+| component.rows[] | object[] |
+| position         | int      |
+#}
+<section class="s-block s-block--eurus s-block--eurus-category-stats bg-[color:var(--eurus-announcement)] py-10 md:py-14">
+  <div class="container px-4">
+    {% if component.section_title %}
+      <h2 class="mb-8 text-center text-xl font-bold text-white md:text-2xl">
+        {{ component.section_title }}
+      </h2>
+    {% endif %}
+    {% if component.rows|length %}
+      <ul class="divide-y divide-white/10">
+        {% for row in component.rows %}
+          <li class="py-6 first:pt-0 last:pb-0">
+            <a href="{{ row.url }}" class="flex flex-row items-center justify-between gap-4">
+              <div class="min-w-0 flex-1">
+                {% if row.title %}
+                  <h3 class="text-xl font-bold text-white md:text-2xl">{{ row.title }}</h3>
+                {% endif %}
+                {% if row.count_text %}
+                  <p class="mt-1 text-sm text-white/80">{{ row.count_text }}</p>
+                {% endif %}
+              </div>
+              {% if row.image %}
+                <div class="h-20 w-32 shrink-0 overflow-hidden rounded-[3rem] md:h-24 md:w-40">
+                  <img
+                    src="{{ row.image }}"
+                    alt=""
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                    width="160"
+                    height="96"
+                  />
+                </div>
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</section>

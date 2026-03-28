@@ -1,0 +1,51 @@
+{#
+| Variable              | Type   |
+|-----------------------|--------|
+| component.heading     | string |
+| component.subheading  | string |
+| component.end_date    | string |
+| component.cta_label   | string |
+| component.cta_url     | string |
+| position              | int    |
+#}
+<section class="s-block s-block--eurus s-block--eurus-countdown-sale py-14 md:py-20"
+         data-eurus="eurus-countdown-sale"
+         aria-label="{{ component.heading|default('Sale') }}"
+         style="background-color: var(--eurus-announcement);">
+  <div class="container px-4">
+    <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+
+      {# Heading #}
+      {% if component.heading %}
+        <h2 class="eurus-heading-display text-3xl font-bold leading-tight text-white md:text-5xl">
+          {{ component.heading }}
+        </h2>
+      {% endif %}
+
+      {% if component.subheading %}
+        <p class="mt-3 text-sm text-white/80 md:text-base">{{ component.subheading }}</p>
+      {% endif %}
+
+      {# Countdown digits #}
+      <div class="eurus-countdown mt-8 flex gap-4 md:gap-6"
+           data-eurus-countdown="{{ component.end_date|default('2026-12-31T23:59:59') }}">
+        {% for unit in ['days', 'hours', 'mins', 'secs'] %}
+          <div class="flex flex-col items-center">
+            <span class="eurus-countdown__digit text-4xl font-bold tabular-nums text-white md:text-6xl"
+                  data-unit="{{ unit }}">00</span>
+            <span class="mt-1 text-xs uppercase tracking-wider text-white/60">{{ unit }}</span>
+          </div>
+        {% endfor %}
+      </div>
+
+      {# CTA #}
+      {% if component.cta_label %}
+        <a href="{{ component.cta_url|default('/') }}"
+           class="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-[color:var(--eurus-ink)] transition-transform hover:scale-105">
+          {{ component.cta_label }}
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+</section>

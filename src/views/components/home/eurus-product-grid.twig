@@ -1,0 +1,37 @@
+{#
+| Variable           | Type       |
+|--------------------|------------|
+| component.products | Product[]  |
+| position           | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-product-grid bg-[color:var(--eurus-surface)] py-14 md:py-20"
+         data-eurus="eurus-product-grid" aria-label="{{ component.title|default('Products') }}">
+  <div class="container px-4">
+
+    {# ── Heading ── #}
+    <div class="mx-auto mb-10 max-w-2xl text-center">
+      {% if component.title %}
+        <h2 class="eurus-heading-display text-3xl font-bold leading-tight text-[color:var(--eurus-ink)] md:text-4xl">
+          {{ component.title }}
+        </h2>
+      {% endif %}
+      {% if component.subtitle %}
+        <p class="mt-3 text-sm leading-relaxed text-[color:var(--eurus-ink-muted)] md:text-base">
+          {{ component.subtitle }}
+        </p>
+      {% endif %}
+    </div>
+
+    {# ── Grid ── #}
+    {% if component.products|length %}
+      <div class="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+        {% for product in component.products %}
+          <custom-salla-product-card product="{{ product }}"></custom-salla-product-card>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center text-sm text-gray-500">{{ trans('eurus.featured.no_products') }}</p>
+    {% endif %}
+
+  </div>
+</section>

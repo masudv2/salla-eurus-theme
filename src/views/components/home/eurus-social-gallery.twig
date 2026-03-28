@@ -1,0 +1,60 @@
+{#
+| Variable              | Type       |
+|-----------------------|------------|
+| component.heading     | string     |
+| component.social_url  | string     |
+| component.photos      | Collection |
+| position              | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-social-gallery bg-[color:var(--eurus-surface)] py-14 md:py-20"
+         data-eurus="eurus-social-gallery"
+         aria-label="{{ component.heading|default('Social gallery') }}">
+  <div class="container px-4">
+
+    {# Heading + social link #}
+    <div class="mb-8 flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left rtl:md:text-right">
+      {% if component.heading %}
+        <h2 class="eurus-heading-display text-2xl font-bold text-[color:var(--eurus-ink)] md:text-3xl">
+          {{ component.heading }}
+        </h2>
+      {% endif %}
+
+      {% if component.social_url %}
+        <a href="{{ component.social_url }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="eurus-pill-btn border-[color:var(--eurus-ink)] text-[color:var(--eurus-ink)] hover:bg-[color:var(--eurus-ink)] hover:text-white">
+          <i class="sicon-instagram-filled mr-2 rtl:ml-2 rtl:mr-0 text-base"></i>
+          {{ trans('eurus.social.follow') }}
+        </a>
+      {% endif %}
+    </div>
+
+    {# Photo grid #}
+    {% if component.photos|length %}
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-6">
+        {% for photo in component.photos %}
+          <a href="{{ photo.url|default('/') }}"
+             class="eurus-social-photo group relative block aspect-square overflow-hidden rounded-[var(--eurus-radius-card)]">
+            {% if photo.image %}
+              <img src="{{ photo.image }}"
+                   alt=""
+                   class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                   loading="lazy">
+            {% else %}
+              <div class="flex h-full w-full items-center justify-center bg-gray-100 text-gray-300">
+                <i class="sicon-photo text-2xl"></i>
+              </div>
+            {% endif %}
+
+            {# Hover overlay #}
+            <span class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
+              <i class="sicon-instagram-filled text-2xl text-white"></i>
+            </span>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>

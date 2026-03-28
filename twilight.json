@@ -1,0 +1,3136 @@
+{
+    "name": {
+        "ar": "رائد",
+        "en": "Theme Raed"
+    },
+    "repository": "https://github.com/SallaApp/theme-raed",
+    "author_email": "support@salla.sa",
+    "features": [
+        "mega-menu",
+        "fonts",
+        "color",
+        "breadcrumb",
+        "unite-cards-height",
+        "component-featured-products",
+        "component-fixed-banner",
+        "component-fixed-products",
+        "component-products-slider",
+        "component-photos-slider",
+        "component-parallax-background",
+        "component-testimonials",
+        "component-square-photos",
+        "component-store-features",
+        "component-youtube",
+        "menu-images",
+        "filters"
+    ],
+    "settings": [
+        {
+            "id": "squar_photo_bg_image_size",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "طريقة عرض الصور في قسم قائمة عناصر ",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-list",
+            "selected": [
+                {
+                    "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
+                    "value": "contain",
+                    "key": "f4adec13-6e4c-654b-b978-b2807935ced9"
+                }
+            ],
+            "options": [
+                {
+                    "label": "تغطية الصورة كامل المساحة مع المحافظة على أبعاد الصورة (Cover)",
+                    "value": "cover",
+                    "key": "e9c8ea8f-c5c6-234e-935-3bce269afde4"
+                },
+                {
+                    "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
+                    "value": "contain",
+                    "key": "f4adec13-6e4c-654b-b978-b2807935ced9"
+                }
+            ],
+            "source": "Manual",
+            "required": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "وضع عمودي للمنتجات في مربع المنتجات الثابتة في الصفحة الرئيسية",
+            "description": null,
+            "id": "vertical_fixed_products",
+            "format": "switch",
+            "required": false,
+            "value": false,
+            "selected": false
+        },
+        {
+            "type": "boolean",
+            "id": "is_more_button_enabled",
+            "label": "عرض (زر الكل) في الصفحة الرئيسية",
+            "format": "switch"
+        },
+        {
+            "type": "static",
+            "id": "static-line1",
+            "format": "line"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "static-label2",
+            "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات أعلى الصفحة</h6></div>",
+            "variant": "h6"
+        },
+        {
+            "id": "header_is_sticky",
+            "label": "تثبت القائمة الرئيسية أعلى الصفحة عند التمرير لأسفل",
+            "description": "يُنصح بالغاء تفعيلها في حالة وجود عناصر كثيرة في القائمة المنسدلة",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "شريط علوي داكن",
+            "description": null,
+            "id": "topnav_is_dark",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": false
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "عرض روابط الصفحات الهامة في الشريط العلوي",
+            "description": "مثل صفحة الهبوط ، المدونة ،الصفحات التعريفية",
+            "id": "important_links",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل قائمة المزيد في القائمة الرئيسية",
+            "description": "عند تفعيلها، ستظهر الروابط الإضافية في قائمة منسدلة تسمى 'المزيد' عند عدم وجود مساحة كافية",
+            "id": "enable_more_menu",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "static",
+            "id": "static-line3",
+            "format": "line"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "static-label4",
+            "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات أسفل الصفحة</h6></div>",
+            "variant": "h6"
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "الوضع الداكن",
+            "description": null,
+            "id": "footer_is_dark",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": false
+        },
+        {
+            "type": "static",
+            "id": "static-line5",
+            "format": "line"
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "static-label6",
+            "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات صفحة المنتج</h6></div>",
+            "variant": "h6"
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل إشعار الإضافة للسلة المحسن",
+            "description": null,
+            "id": "enable_add_product_toast",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تثبيت زر الإضافة والكمية أسفل شاشة الجوال",
+            "description": null,
+            "id": "sticky_add_to_cart",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "اظهار الوسوم",
+            "description": null,
+            "id": "show_tags",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "slider_background_size",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "طريقة عرض الصور في سليدر صور المنتج",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-list",
+            "selected": [
+                {
+                    "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
+                    "value": "contain",
+                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                }
+            ],
+            "options": [
+                {
+                    "label": "تغطية الصورة كامل المساحة مع المحافظة على أبعاد الصورة (Cover)",
+                    "value": "cover",
+                    "key": "e9c8ea8f-c5c6-438e-9d45-3bce269afde4"
+                },
+                {
+                    "label": "اظهار الصورة كاملةً في المنتصف (Contain)",
+                    "value": "contain",
+                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                }
+            ],
+            "source": "Manual",
+            "required": true
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تكبير الصور في سليدر صور المنتج",
+            "description": "هذه الخاصية تمكنك من تكبير الصورة لتسهل رؤية المزيد من التفاصيل بها",
+            "id": "imageZoom",
+            "format": "switch",
+            "required": false,
+            "value": false,
+            "selected": false
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "static-label-eurus",
+            "value": "<div class='rounded-lg' style='background-color: #5c634e; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'>Eurus — الصفحة الرئيسية</h6></div>",
+            "variant": "h6"
+        },
+        {
+            "type": "boolean",
+            "id": "eurus_home_announcement_bar",
+            "label": "شريط إعلان يوروس (الرئيسية فقط)",
+            "description": "Olive announcement strip — homepage only",
+            "format": "switch",
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "string",
+            "id": "eurus_announcement_text",
+            "label": "نص الشريط العلوي",
+            "format": "text",
+            "multilanguage": true,
+            "required": false,
+            "icon": "sicon-format-text-alt",
+            "placeholder": "FREE SHIPPING ON ALL ORDERS",
+            "value": {
+                "en": "FREE SHIPPING ON ALL ORDERS",
+                "ar": "شحن مجاني على جميع الطلبات"
+            }
+        }
+    ],
+    "components": [
+        {
+            "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
+            "title": {
+                "en": "Enhances Animated Images",
+                "ar": "صور متحركة (محسنة)"
+            },
+            "icon": "sicon-image-carousel",
+            "path": "home.enhanced-slider",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "static-desc",
+                    "value": "<div ><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/images-slider-enhancement.png?v=1.1'></div>"
+                },
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "enhance-slider-note",
+                    "value": "<div >هذا العنصر غير مناسب لعرض البنرات، يمكنك استخدام عنصر <strong>صور متحركة</strong> بدلاً منه لتظهر صورة البنر بشكل كامل</div>"
+                },
+                {
+                    "id": "slides",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 10,
+                    "label": null,
+                    "item_label": "صورة",
+                    "value": [
+                        {
+                            "slides.image": "https://cdn.salla.sa/ZrBEO/MopzhoqpTkDObcKc8Q8n77AuydanfsGXdZO7iinH.jpg",
+                            "slides.title": "روِّج لمنتجاتك كصور متحركة",
+                            "slides.description": "اعرض المنتجات التي تود إبرازها لزوّار متجرك في هذه المساحة",
+                            "slides.without_overlay": false
+                        },
+                        {
+                            "slides.image": "https://cdn.salla.sa/ZrBEO/3gOhYSaIhaHxhH2IHWxJYDl9JHwxP6dGKiZFSq4K.jpg",
+                            "slides.title": "شجّع زوار متجرك على الشراء عبر عروض خاصة",
+                            "slides.description": "اعرض المنتجات التي تود إبرازها لزوّار متجرك في هذه المساحة",
+                            "slides.without_overlay": false
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "id": "slides.image",
+                            "label": "صورة البنر",
+                            "format": "image",
+                            "required": true,
+                            "placeholder": null,
+                            "description": "* المقاس المناسب للصورة هو 900×600 بكسل"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "عنوان رئيسي",
+                            "multilanguage": true,
+                            "id": "slides.title",
+                            "value": null,
+                            "required": false,
+                            "format": "text",
+                            "description": "يتم عرضه على الصورة بحجم بارز جداً، مع إضافة تأثير دخول للنص يضيف لمسة جمالية على معرض الصور.",
+                            "placeholder": "يمكنك إضافة عنوان بارز هنا...",
+                            "hide": false,
+                            "minLength": 0,
+                            "maxLength": 100
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "نص إضافي",
+                            "multilanguage": true,
+                            "id": "slides.description",
+                            "value": null,
+                            "description": "يتم عرضه على الصورة بحجم أصغر من العنوان الرئيسي، مع إضافة تأثير دخول للنص يضيف لمسة جمالية على معرض الصور.",
+                            "format": "textarea",
+                            "required": false,
+                            "placeholder": "يمكنك إضافة تفاصيل إضافية هنا",
+                            "minLength": 0,
+                            "maxLength": 255
+                        },
+                        {
+                            "type": "boolean",
+                            "icon": "sicon-toggle-off",
+                            "label": "إزالة طبقة التعتم",
+                            "description": null,
+                            "id": "slides.without_overlay",
+                            "format": "switch",
+                            "required": false,
+                            "value": false,
+                            "selected": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "2b1b130b-5b37-422a-9683-e0fd367460c0",
+            "title": {
+                "en": "Quick Links",
+                "ar": "روابط سريعة"
+            },
+            "icon": "sicon-layout-grid-rearrange",
+            "path": "home.main-links",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div ><img class='w-full' src='https://cdn.salla.network/images/themes/raed/main-links-with-bg.jpg?v=1.1'></div>",
+                    "conditions": [
+                        {
+                            "id": "merge_with_top_component",
+                            "operation": "=",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "without-bg",
+                    "value": "<div ><h6 >معاينة العنصر</h6><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/main-links.png?v=1.1'></div>",
+                    "conditions": [
+                        {
+                            "id": "merge_with_top_component",
+                            "operation": "=",
+                            "value": false
+                        }
+                    ]
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "id": "title",
+                    "value": null,
+                    "required": false,
+                    "format": "text",
+                    "description": null,
+                    "placeholder": "أدخل العنوان هنا...",
+                    "minLength": 0,
+                    "maxLength": 100
+                },
+                {
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "دمج مع العنصر السابق",
+                    "description": null,
+                    "id": "merge_with_top_component",
+                    "format": "switch",
+                    "required": false,
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "static-desc",
+                    "value": "<small >* إزاحة كامل العنصر ومحتوياته مع العنصر السابق، وجعلهما يظهران كعنصر واحد متناسق، يكون ذا فائدة في حالة كان العنصر السابق هو (صور متحركة محسنة). </small>"
+                },
+                {
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "عرض أسهم التحرك",
+                    "description": null,
+                    "id": "show_controls",
+                    "format": "switch",
+                    "required": false,
+                    "value": true,
+                    "selected": true
+                },
+                {
+                    "type": "boolean",
+                    "icon": "sicon-toggle-off",
+                    "label": "عرض روابط التصنيفات",
+                    "description": "يمكنك تحديد التصنيفات بدل العناصر الخاصة، مع امكانية عرض صورة التصنيف مع العنصر",
+                    "id": "show_cats",
+                    "format": "switch",
+                    "required": false,
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "categories",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "حدد التصنيفات",
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [],
+                    "source": "categories",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": false,
+                    "conditions": [
+                        {
+                            "id": "show_cats",
+                            "operation": "=",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "id": "links",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 3,
+                    "maxLength": 100,
+                    "item_label": "رابط",
+                    "value": [
+                        {
+                            "links.icon": "sicon-packed-box",
+                            "links.title": "منتج جاهز",
+                            "links.url__type": "offers_link"
+                        },
+                        {
+                            "links.icon": "sicon-fabric-swatch",
+                            "links.title": "خدمة حسب الطلب",
+                            "links.url__type": "offers_link"
+                        },
+                        {
+                            "links.icon": "sicon-cake",
+                            "links.title": "أكل ومشروبات",
+                            "links.url__type": "offers_link"
+                        },
+                        {
+                            "links.icon": "sicon-game-controller-alt",
+                            "links.title": "منتج رقمي",
+                            "links.url__type": "offers_link"
+                        },
+                        {
+                            "links.icon": "sicon-barcode-scan",
+                            "links.title": "بطاقة رقمية",
+                            "links.url__type": "offers_link"
+                        },
+                        {
+                            "links.icon": "sicon-inbox-full",
+                            "links.title": "مجموعة منتجات",
+                            "links.url__type": "offers_link"
+                        },
+                        {
+                            "links.icon": "sicon-calendar-date",
+                            "links.title": "حجوزات",
+                            "links.url__type": "offers_link"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "عنوان الرابط",
+                            "id": "links.icon",
+                            "value": "sicon-store2",
+                            "required": false,
+                            "format": "icon",
+                            "class": "form--inline",
+                            "description": null
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "multilanguage": true,
+                            "id": "links.title",
+                            "value": null,
+                            "required": false,
+                            "format": "text",
+                            "description": null,
+                            "placeholder": "أدخل عنوان للرابط هنا...",
+                            "minLength": 2,
+                            "maxLength": 80
+                        },
+                        {
+                            "type": "items",
+                            "icon": "sicon-link",
+                            "label": "الرابط",
+                            "id": "links.url",
+                            "value": null,
+                            "description": null,
+                            "required": false,
+                            "format": "variable-list",
+                            "searchable": true,
+                            "source": "custom",
+                            "sources": [
+                                {
+                                    "label": "منتج",
+                                    "key": "products",
+                                    "value": "products"
+                                },
+                                {
+                                    "label": "تصنيف",
+                                    "key": "categories",
+                                    "value": "categories"
+                                },
+                                {
+                                    "label": "ماركة تجارية",
+                                    "key": "brands",
+                                    "value": "brands"
+                                },
+                                {
+                                    "label": "صفحة تعريفية",
+                                    "key": "pages",
+                                    "value": "pages"
+                                },
+                                {
+                                    "label": "مقالة",
+                                    "key": "blog_articles",
+                                    "value": "blog_articles"
+                                },
+                                {
+                                    "label": "تصنيف ضمن المدونة",
+                                    "key": "blog_categories",
+                                    "value": "blog_categories"
+                                },
+                                {
+                                    "label": "التخفيضات",
+                                    "key": "offers_link",
+                                    "value": "offers_link"
+                                },
+                                {
+                                    "label": "الماركات التجارية",
+                                    "key": "brands_link",
+                                    "value": "brands_link"
+                                },
+                                {
+                                    "label": "المدونة",
+                                    "key": "blog_link",
+                                    "value": "blog_link"
+                                },
+                                {
+                                    "label": "رابط خارجي",
+                                    "key": "custom",
+                                    "value": "custom"
+                                }
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "id": "show_cats",
+                            "operation": "=",
+                            "value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "9a758d20-2ce4-4782-91fe-c04466464588",
+            "title": {
+                "en": "Animated products with a background",
+                "ar": "منتجات متحركة مع خلفية"
+            },
+            "icon": "sicon-list-play",
+            "path": "home.slider-products-with-header",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div ><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/slider-products-with-bg.png?v=1.1'></div>"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-image",
+                    "value": "https://cdn.salla.sa/form-builder/D7bG3pgSit43TheOejBOZV7LIfG1y1Cj0hWLmgIh.jpg",
+                    "label": "صورة الخلفية",
+                    "id": "background",
+                    "format": "image",
+                    "required": true,
+                    "placeholder": null,
+                    "description": "* المقاس المناسب للصورة هو 1233×500 بكسل",
+                    "settings": {
+                        "height": 580,
+                        "width": 1400
+                    }
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "عنوان رئيسي",
+                    "multilanguage": true,
+                    "id": "title",
+                    "value": null,
+                    "required": false,
+                    "format": "text",
+                    "description": null,
+                    "placeholder": "يمكنك إضافة العنوان الرئيسي هنا...",
+                    "hide": false,
+                    "minLength": 0,
+                    "maxLength": "80"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "نص توضيحي",
+                    "multilanguage": true,
+                    "id": "description",
+                    "value": null,
+                    "description": null,
+                    "format": "textarea",
+                    "required": false,
+                    "placeholder": "يمكنك إضافة وصف لهذا القسم هنا...",
+                    "minLength": 0,
+                    "maxLength": "256"
+                },
+                {
+                    "type": "items",
+                    "icon": "sicon-keyboard_arrow_down",
+                    "label": "منتجات",
+                    "id": "products",
+                    "format": "dropdown-list",
+                    "description": null,
+                    "selected": [],
+                    "options": [],
+                    "required": true,
+                    "multichoice": true,
+                    "source": "products",
+                    "searchable": true,
+                    "maxLength": 8,
+                    "minLength": 1,
+                    "value": []
+                },
+                {
+                    "type": "items",
+                    "icon": "sicon-link",
+                    "label": "رابط عرض الكل",
+                    "id": "display_all_url",
+                    "value": [],
+                    "description": "عند إختيار رابط فارغ سيتم إخفاء زر 'عرض الكل'",
+                    "required": false,
+                    "format": "variable-list",
+                    "searchable": true,
+                    "source": "custom",
+                    "sources": [
+                        {
+                            "label": "منتج",
+                            "key": "products",
+                            "value": "products"
+                        },
+                        {
+                            "label": "تصنيف",
+                            "key": "categories",
+                            "value": "categories"
+                        },
+                        {
+                            "label": "ماركة تجارية",
+                            "key": "brands",
+                            "value": "brands"
+                        },
+                        {
+                            "label": "صفحة تعريفية",
+                            "key": "pages",
+                            "value": "pages"
+                        },
+                        {
+                            "label": "مقالة",
+                            "key": "blog_articles",
+                            "value": "blog_articles"
+                        },
+                        {
+                            "label": "تصنيف ضمن المدونة",
+                            "key": "blog_categories",
+                            "value": "blog_categories"
+                        },
+                        {
+                            "label": "التخفيضات",
+                            "key": "offers_link",
+                            "value": "offers_link"
+                        },
+                        {
+                            "label": "الماركات التجارية",
+                            "key": "brands_link",
+                            "value": "brands_link"
+                        },
+                        {
+                            "label": "المدونة",
+                            "key": "blog_link",
+                            "value": "blog_link"
+                        },
+                        {
+                            "label": "رابط خارجي",
+                            "key": "custom",
+                            "value": "custom"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "b89edc4a-ce0b-468f-8323-2da48147bb32",
+            "title": {
+                "en": "Enhanced square images",
+                "ar": "صور مربعة (محسنة)"
+            },
+            "icon": "sicon-image",
+            "path": "home.enhanced-square-banners",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div ><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/square-images.png?v=1.1'></div>"
+                },
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "banners-note",
+                    "value": "<div style='background-color:#f5f5f5;border-radius:8px;padding:12px 16px;margin-bottom:16px;color:#333;font-size:14px;line-height:1.6;direction:inherit;text-align:inherit;'><strong style='color:#e53e3e;'>تنبيه:</strong> يتم اقتصاص الصور من الأطراف لتناسب مقاسات الشاشات، لذا يُرجى مراعاة الأجزاء المقتصّة طولاً وعرضاً عند التصميم لتظهر الصورة كاملة قدر الإمكان.</div>"
+                },
+                {
+                    "id": "banners",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 5,
+                    "label": "قائمة الصور",
+                    "item_label": "صورة",
+                    "value": [
+                        {
+                            "banners.image": "https://cdn.salla.sa/mQgZlG/pzOCEw10wCfXeVSpKnL0Ifd1O9ZkTfnZ17RkE14R.jpg",
+                            "banners.url": null,
+                            "banners.title": "تصفَّح حسب التصنيف",
+                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
+                        },
+                        {
+                            "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
+                            "banners.url": null,
+                            "banners.title": "تصفَّح حسب التصنيف",
+                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
+                        },
+                        {
+                            "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
+                            "banners.url": null,
+                            "banners.title": "تصفَّح حسب التصنيف",
+                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
+                        },
+                        {
+                            "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
+                            "banners.url": null,
+                            "banners.title": "تصفَّح حسب التصنيف",
+                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
+                        },
+                        {
+                            "banners.image": "https://cdn.salla.sa/mQgZlG/lkyDjYwvWJNmAQoGnLALLcUkm66rCCDbTyVlSGdH.jpg",
+                            "banners.url": null,
+                            "banners.title": "تصفَّح حسب التصنيف",
+                            "banners.description": "سهِّل تجربة التسوُّق والوصول لمنتجاتك"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "label": "صورة البنر",
+                            "id": "banners.image",
+                            "format": "image",
+                            "required": true,
+                            "placeholder": null,
+                            "description": "* المقاس المناسب للصورة هو 640×427 بكسل",
+                            "settings": {
+                                "height": 427,
+                                "width": 640
+                            }
+                        },
+                        {
+                            "type": "items",
+                            "icon": "sicon-link",
+                            "label": "الرابط",
+                            "id": "banners.url",
+                            "value": null,
+                            "description": null,
+                            "required": false,
+                            "format": "variable-list",
+                            "searchable": true,
+                            "source": "custom",
+                            "sources": [
+                                {
+                                    "label": "منتج",
+                                    "key": "products",
+                                    "value": "products"
+                                },
+                                {
+                                    "label": "تصنيف",
+                                    "key": "categories",
+                                    "value": "categories"
+                                },
+                                {
+                                    "label": "ماركة تجارية",
+                                    "key": "brands",
+                                    "value": "brands"
+                                },
+                                {
+                                    "label": "صفحة تعريفية",
+                                    "key": "pages",
+                                    "value": "pages"
+                                },
+                                {
+                                    "label": "مقالة",
+                                    "key": "blog_articles",
+                                    "value": "blog_articles"
+                                },
+                                {
+                                    "label": "تصنيف ضمن المدونة",
+                                    "key": "blog_categories",
+                                    "value": "blog_categories"
+                                },
+                                {
+                                    "label": "التخفيضات",
+                                    "key": "offers_link",
+                                    "value": "offers_link"
+                                },
+                                {
+                                    "label": "الماركات التجارية",
+                                    "key": "brands_link",
+                                    "value": "brands_link"
+                                },
+                                {
+                                    "label": "المدونة",
+                                    "key": "blog_link",
+                                    "value": "blog_link"
+                                },
+                                {
+                                    "label": "رابط خارجي",
+                                    "key": "custom",
+                                    "value": "custom"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "label": "عنوان رئيسي",
+                            "multilanguage": true,
+                            "id": "banners.title",
+                            "value": null,
+                            "required": false,
+                            "format": "text",
+                            "description": "نص يتم إضافته على الصورة بنمط خط كبير",
+                            "placeholder": "أدخل النص هنا...",
+                            "hide": false,
+                            "minLength": 0,
+                            "maxLength": 100
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "label": "نص توضيحي",
+                            "multilanguage": true,
+                            "id": "banners.description",
+                            "value": null,
+                            "description": "نص يتم إضافته على الصورة بخط أصغر من العنوان الرئيسي",
+                            "format": "textarea",
+                            "required": false,
+                            "placeholder": "Your text here",
+                            "minLength": 0,
+                            "maxLength": 255
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "25f6cf26-a53f-4954-9b32-739b311b32c7",
+            "title": {
+                "en": "Brands",
+                "ar": "الماركات التجارية"
+            },
+            "icon": "sicon-award-ribbon",
+            "path": "home.brands",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "with-bg",
+                    "value": "<div ><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/brands.png?v=1.1'></div>"
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "id": "title",
+                    "required": false,
+                    "format": "text",
+                    "description": null,
+                    "placeholder": "أدخل العنوان هنا...",
+                    "minLength": 0,
+                    "maxLength": 200,
+                    "value": {
+                        "ar": "تصفح من خلال العلامات التجارية",
+                        "en": "Browse All Brands"
+                    }
+                },
+                {
+                    "type": "items",
+                    "icon": "sicon-keyboard_arrow_down",
+                    "label": "الماركات التجارية",
+                    "id": "brands",
+                    "format": "dropdown-list",
+                    "description": null,
+                    "selected": [],
+                    "options": [],
+                    "required": true,
+                    "multichoice": true,
+                    "searchable": true,
+                    "source": "brands"
+                }
+            ]
+        },
+        {
+            "key": "541cc423-90c7-4230-8a33-a0342cfde4ad",
+            "title": {
+                "en": "Custom testimonials",
+                "ar": "آراء عملاء مخصصة"
+            },
+            "icon": "sicon-chat-bubbles",
+            "path": "home.custom-testimonials",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "static-desc",
+                    "value": "<div ><img class='w-full' src='https://cdn.salla.network/images/themes/raed/preview-images/custom-testimonials.png?v=1.1'></div>"
+                },
+                {
+                    "id": "items",
+                    "key": "0473eb46-c7f5-44c5-bd6f-b1fe716a5e64",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "التقييمات",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": "التقييم",
+                    "icon": "sicon-list-add",
+                    "value": [
+                        {
+                            "items.name": "ندى الحسيني",
+                            "items.avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_female.png",
+                            "items.stars": 5,
+                            "items.text": "وصلتني اليوم  وطلعت جميلة متحمسة أجربها ❤️"
+                        },
+                        {
+                            "items.name": "خالد الأحمد",
+                            "items.avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+                            "items.stars": 5,
+                            "items.text": "اشتريت من هنا لعيالي وصراحة شئ لا يعلى عليه 👏"
+                        },
+                        {
+                            "items.name": "خالد المسعودي",
+                            "items.avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+                            "items.stars": 5,
+                            "items.text": "رهيبين يفكون أزمة. 👌"
+                        },
+                        {
+                            "items.name": "عبدالعزيز اليامي",
+                            "items.avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+                            "items.stars": 5,
+                            "items.text": "أحب هذا المتجر وتعاملهم الراقي مع العملاء ❤️"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "id": "items.name",
+                            "key": "04e34d04-d1c3-4b75-b1d6-4e5b4ed22623",
+                            "type": "string",
+                            "format": "text",
+                            "label": "اسم العميل",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "اسم العميل",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false
+                        },
+                        {
+                            "id": "items.avatar",
+                            "key": "9ae4a6cc-7d20-4ae9-8bc0-33b2452502ca",
+                            "type": "string",
+                            "format": "image",
+                            "label": "صورة العميل",
+                            "description": "المقاس المناسب للصورة هو 68*68 بكسل",
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": true
+                        },
+                        {
+                            "id": "items.stars",
+                            "type": "number",
+                            "format": "integer",
+                            "label": "عدد النجوم",
+                            "description": null,
+                            "key": "f0caf793-88f8-4178-b1cc-a7ace5c09ff6",
+                            "labelHTML": "من 1 إلى 5",
+                            "placeholder": "القيمة",
+                            "icon": "sicon-pencil-ruler",
+                            "value": 5,
+                            "required": false,
+                            "minimum": 1,
+                            "maximum": 5
+                        },
+                        {
+                            "id": "items.text",
+                            "key": "0d474cc4-39f6-4495-8e24-a8eb10d4bbab",
+                            "type": "string",
+                            "format": "textarea",
+                            "label": "نص التقييم",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "نص التقييم",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": false
+                        }
+                    ],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 30
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111101",
+            "title": {
+                "en": "Eurus: Hero",
+                "ar": "يوروس: البطل"
+            },
+            "icon": "sicon-image-carousel",
+            "path": "home.eurus-hero",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-hero-desc",
+                    "value": "<div class=\"text-sm\">Eurus hero: image + editorial text + two CTAs per slide.</div>"
+                },
+                {
+                    "id": "slides",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 10,
+                    "item_label": "Slide",
+                    "label": "Slides",
+                    "value": [
+                        {
+                            "slides.image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=80",
+                            "slides.eyebrow": {
+                                "en": "UP TO 50% OFF",
+                                "ar": "خصم حتى 50٪"
+                            },
+                            "slides.title": {
+                                "en": "Mastering the",
+                                "ar": "إتقان"
+                            },
+                            "slides.title_accent": {
+                                "en": "art of skin care.",
+                                "ar": "فن العناية بالبشرة."
+                            },
+                            "slides.description": {
+                                "en": "Discover curated routines for radiant skin.",
+                                "ar": "اكتشف روتينات مختارة لبشرة مشرقة."
+                            },
+                            "slides.cta_primary": {
+                                "en": "New Arrival",
+                                "ar": "وصل حديثاً"
+                            },
+                            "slides.cta_secondary": {
+                                "en": "Shop All",
+                                "ar": "تسوق الكل"
+                            },
+                            "slides.cta_primary_url": "/",
+                            "slides.cta_secondary_url": "/",
+                            "slides.without_overlay": true
+                        },
+                        {
+                            "slides.image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=1200&q=80",
+                            "slides.eyebrow": {
+                                "en": "NEW ARRIVAL",
+                                "ar": "وصل حديثًا"
+                            },
+                            "slides.title": {
+                                "en": "Glow from",
+                                "ar": "توهّجي من"
+                            },
+                            "slides.title_accent": {
+                                "en": "within.",
+                                "ar": "الداخل."
+                            },
+                            "slides.description": {
+                                "en": "Discover our plant-powered serums for radiant, healthy skin.",
+                                "ar": "اكتشفي سيروماتنا النباتية لبشرة مشرقة وصحية."
+                            },
+                            "slides.cta_primary": {
+                                "en": "Shop serums",
+                                "ar": "تسوقي السيرومات"
+                            },
+                            "slides.cta_primary_url": "/collections",
+                            "slides.cta_secondary": {
+                                "en": "Our story",
+                                "ar": "قصتنا"
+                            },
+                            "slides.cta_secondary_url": "/about",
+                            "slides.without_overlay": false
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "id": "slides.image",
+                            "label": "Slide image",
+                            "format": "image",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "slides.eyebrow",
+                            "label": "Eyebrow",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "slides.title",
+                            "label": "Heading line 1",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "slides.title_accent",
+                            "label": "Heading line 2 (accent)",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "id": "slides.description",
+                            "label": "Description",
+                            "multilanguage": true,
+                            "format": "textarea",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "slides.cta_primary",
+                            "label": "Primary CTA label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "slides.cta_primary_url",
+                            "label": "Primary CTA URL",
+                            "format": "text",
+                            "required": false,
+                            "placeholder": "/"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "slides.cta_secondary",
+                            "label": "Secondary CTA label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "slides.cta_secondary_url",
+                            "label": "Secondary CTA URL",
+                            "format": "text",
+                            "required": false,
+                            "placeholder": "/"
+                        },
+                        {
+                            "type": "boolean",
+                            "icon": "sicon-toggle-off",
+                            "id": "slides.without_overlay",
+                            "label": "No dark overlay on image",
+                            "format": "switch",
+                            "value": true,
+                            "selected": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111102",
+            "title": {
+                "en": "Eurus: Promo strip",
+                "ar": "يوروس: شريط عرض"
+            },
+            "icon": "sicon-discount-coupon",
+            "path": "home.eurus-promo-strip",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-promo-help",
+                    "value": "<div class=\"text-sm\">Promo block: eyebrow + title + accent + body + optional CTA.</div>"
+                },
+                {
+                    "id": "eyebrow",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Eyebrow",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "BFCM 25 – GIFT MORE, GET MORE",
+                        "ar": "عروض الموسم"
+                    }
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Cyber week",
+                        "ar": "أسبوع التخفيضات"
+                    }
+                },
+                {
+                    "id": "heading_accent",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Accent line (italic)",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "70% off",
+                        "ar": "خصم 70٪"
+                    }
+                },
+                {
+                    "id": "body",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Body",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "value": {
+                        "en": "Enjoy a complimentary gift with your order. Limited time.",
+                        "ar": "احصل على هدية مع طلبك لفترة محدودة."
+                    }
+                },
+                {
+                    "id": "cta_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA label",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Claim the deals",
+                        "ar": "استفد من العروض"
+                    }
+                },
+                {
+                    "id": "cta_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA URL",
+                    "icon": "sicon-link",
+                    "value": "/"
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111103",
+            "title": {
+                "en": "Eurus: Category pills",
+                "ar": "يوروس: تصنيفات"
+            },
+            "icon": "sicon-layout-grid-rearrange",
+            "path": "home.eurus-category-pills",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-pills-help",
+                    "value": "<div class=\"text-sm\">Horizontal category chips with image + label.</div>"
+                },
+                {
+                    "id": "section_title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section title",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Our holiday picks.",
+                        "ar": "اختياراتنا للموسم."
+                    }
+                },
+                {
+                    "id": "pills",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 12,
+                    "item_label": "Category",
+                    "label": "Items",
+                    "value": [
+                        {
+                            "pills.image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&q=80",
+                            "pills.label": {
+                                "en": "Saje kits",
+                                "ar": "مجموعات"
+                            },
+                            "pills.url": "/"
+                        },
+                        {
+                            "pills.image": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=200&q=80",
+                            "pills.label": {
+                                "en": "Lipstick",
+                                "ar": "أحمر شفاه"
+                            },
+                            "pills.url": "/"
+                        },
+                        {
+                            "pills.image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=200&q=80",
+                            "pills.label": {
+                                "en": "Moisturisers",
+                                "ar": "مرطبات"
+                            },
+                            "pills.url": "/"
+                        },
+                        {
+                            "pills.image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=200&q=80",
+                            "pills.label": {
+                                "en": "Sun Care",
+                                "ar": "حماية الشمس"
+                            },
+                            "pills.url": "/"
+                        },
+                        {
+                            "pills.image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=200&q=80",
+                            "pills.label": {
+                                "en": "Gift Sets",
+                                "ar": "طقم هدايا"
+                            },
+                            "pills.url": "/"
+                        },
+                        {
+                            "pills.image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&q=80",
+                            "pills.label": {
+                                "en": "Best Sellers",
+                                "ar": "الأكثر مبيعًا"
+                            },
+                            "pills.url": "/"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "id": "pills.image",
+                            "label": "Image",
+                            "format": "image",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "pills.label",
+                            "label": "Label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "pills.url",
+                            "label": "Link URL",
+                            "format": "text",
+                            "required": true,
+                            "placeholder": "/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111104",
+            "title": {
+                "en": "Eurus: Featured row",
+                "ar": "يوروس: صف مميز"
+            },
+            "icon": "sicon-product",
+            "path": "home.eurus-featured-row",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-featured-help",
+                    "value": "<div class=\"text-sm\">Product grid from selected products.</div>"
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Title",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Featured",
+                        "ar": "مختارات"
+                    }
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Subtitle",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": null
+                },
+                {
+                    "type": "items",
+                    "icon": "sicon-keyboard_arrow_down",
+                    "label": "Products",
+                    "id": "products",
+                    "format": "dropdown-list",
+                    "selected": [],
+                    "options": [],
+                    "required": true,
+                    "multichoice": true,
+                    "source": "products",
+                    "searchable": true,
+                    "maxLength": 8,
+                    "minLength": 1,
+                    "value": []
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111105",
+            "title": {
+                "en": "Eurus: Category stats",
+                "ar": "يوروس: إحصائيات التصنيف"
+            },
+            "icon": "sicon-list-add",
+            "path": "home.eurus-category-stats",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-stats-help",
+                    "value": "<div class=\"text-sm\">Large category rows with count + oval image.</div>"
+                },
+                {
+                    "id": "section_title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section title",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Shop by category",
+                        "ar": "تسوق حسب التصنيف"
+                    }
+                },
+                {
+                    "id": "rows",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 12,
+                    "item_label": "Row",
+                    "label": "Rows",
+                    "value": [
+                        {
+                            "rows.title": {
+                                "en": "Cleansers",
+                                "ar": "منظفات"
+                            },
+                            "rows.count_text": {
+                                "en": "65 products",
+                                "ar": "65 منتجاً"
+                            },
+                            "rows.image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&q=80",
+                            "rows.url": "/"
+                        },
+                        {
+                            "rows.title": {
+                                "en": "Serums",
+                                "ar": "سيروم"
+                            },
+                            "rows.count_text": {
+                                "en": "41 products",
+                                "ar": "41 منتجاً"
+                            },
+                            "rows.image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80",
+                            "rows.url": "/"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "rows.title",
+                            "label": "Category name",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "rows.count_text",
+                            "label": "Count label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-image",
+                            "id": "rows.image",
+                            "label": "Image",
+                            "format": "image",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "rows.url",
+                            "label": "URL",
+                            "format": "text",
+                            "required": true,
+                            "placeholder": "/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111106",
+            "title": {
+                "en": "Eurus: Split banner",
+                "ar": "يوروس: بانر مقسوم"
+            },
+            "icon": "sicon-image",
+            "path": "home.eurus-split-banner",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-split-help",
+                    "value": "<div class=\"text-sm\">Image + text split (responsive stack).</div>"
+                },
+                {
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "icon": "sicon-image",
+                    "required": true,
+                    "value": "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=900&q=80"
+                },
+                {
+                    "id": "image_on_right",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "Image on right (desktop)",
+                    "icon": "sicon-toggle-off",
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Title",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "The Black Friday wellness kit.",
+                        "ar": "مجموعة العافية."
+                    }
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Description",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "value": {
+                        "en": "Four travel-sized remedies for jet lag, tension, and dry skin.",
+                        "ar": "أربع وصفات عملية للعناية أثناء السفر."
+                    }
+                },
+                {
+                    "id": "cta_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA label",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": null
+                },
+                {
+                    "id": "cta_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA URL",
+                    "icon": "sicon-link",
+                    "required": false,
+                    "value": null
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111107",
+            "title": {
+                "en": "Eurus: Product grid",
+                "ar": "يوروس: شبكة منتجات"
+            },
+            "icon": "sicon-product",
+            "path": "home.eurus-product-grid",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-pgrid-help",
+                    "value": "<div class=\"text-sm\">Carousel or grid of selected products.</div>"
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section title",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "The Black Friday wellness kit.",
+                        "ar": "عروض الجمعة البيضاء."
+                    }
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Subtitle",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": {
+                        "en": "Four travel-sized remedies for jet lag, tension, dry skin, and summer stress.",
+                        "ar": "أربعة حلول للعناية بالبشرة أثناء السفر."
+                    }
+                },
+                {
+                    "type": "items",
+                    "icon": "sicon-keyboard_arrow_down",
+                    "label": "Products",
+                    "id": "products",
+                    "format": "dropdown-list",
+                    "selected": [],
+                    "options": [],
+                    "required": true,
+                    "multichoice": true,
+                    "source": "products",
+                    "searchable": true,
+                    "maxLength": 12,
+                    "minLength": 1,
+                    "value": []
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111108",
+            "title": {
+                "en": "Eurus: Countdown sale",
+                "ar": "يوروس: عد تنازلي"
+            },
+            "icon": "sicon-stopwatch",
+            "path": "home.eurus-countdown-sale",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-countdown-help",
+                    "value": "<div class=\"text-sm\">Countdown banner with end date + CTA.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Mega Deal 70% OFF",
+                        "ar": "عرض ضخم خصم 70٪"
+                    }
+                },
+                {
+                    "id": "subheading",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Sub-heading",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": {
+                        "en": "Going fast! Secure your order while supplies last.",
+                        "ar": "أسرع! احجز طلبك قبل نفاد الكمية."
+                    }
+                },
+                {
+                    "id": "end_date",
+                    "type": "string",
+                    "format": "text",
+                    "label": "End date/time (ISO 8601)",
+                    "icon": "sicon-calendar-date",
+                    "required": true,
+                    "placeholder": "2026-12-31T23:59:59",
+                    "value": "2026-12-31T23:59:59"
+                },
+                {
+                    "id": "cta_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA label",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Shop sales",
+                        "ar": "تسوق العروض"
+                    }
+                },
+                {
+                    "id": "cta_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA URL",
+                    "icon": "sicon-link",
+                    "value": "/"
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111109",
+            "title": {
+                "en": "Eurus: Bundle builder",
+                "ar": "يوروس: بناء الحزمة"
+            },
+            "icon": "sicon-shopping-bag",
+            "path": "home.eurus-bundle-builder",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-bundle-help",
+                    "value": "<div class=\"text-sm\">Multi-step bundle UI. Add steps with products; tiered discounts are UI-only — actual discounts require Salla bundles/offers configuration.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Unbeatable prices with bundle.",
+                        "ar": "أسعار لا تُقاوم مع الحزمة."
+                    }
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Description",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": {
+                        "en": "Create your personalized skincare ritual and unlock exclusive savings.",
+                        "ar": "صمّم روتين العناية ببشرتك واحصل على خصومات حصرية."
+                    }
+                },
+                {
+                    "id": "steps",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 5,
+                    "item_label": "Step",
+                    "label": "Steps",
+                    "value": [
+                        {
+                            "steps.label": {
+                                "en": "Prep Your Skin",
+                                "ar": "حضّر بشرتك"
+                            },
+                            "steps.icon": "sicon-sun"
+                        },
+                        {
+                            "steps.label": {
+                                "en": "Treat & Nourish",
+                                "ar": "عالج وغذّ"
+                            },
+                            "steps.icon": "sicon-heart"
+                        },
+                        {
+                            "steps.label": {
+                                "en": "Lock the Glow",
+                                "ar": "ثبّت اللمعان"
+                            },
+                            "steps.icon": "sicon-star"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "steps.label",
+                            "label": "Step label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "steps.icon",
+                            "label": "Salla icon class",
+                            "format": "icon",
+                            "required": false,
+                            "value": "sicon-star"
+                        }
+                    ]
+                },
+                {
+                    "id": "tiers",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5,
+                    "item_label": "Tier",
+                    "label": "Discount tiers (informational)",
+                    "value": [
+                        {
+                            "tiers.label": "5% off",
+                            "tiers.min_items": 2
+                        },
+                        {
+                            "tiers.label": "10% off",
+                            "tiers.min_items": 4
+                        },
+                        {
+                            "tiers.label": "15% off",
+                            "tiers.min_items": 6
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "tiers.label",
+                            "label": "Tier label",
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "number",
+                            "icon": "sicon-pencil-ruler",
+                            "id": "tiers.min_items",
+                            "label": "Min items",
+                            "format": "integer",
+                            "required": true,
+                            "minimum": 1,
+                            "maximum": 20,
+                            "value": 2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111110",
+            "title": {
+                "en": "Eurus: Trust marquee",
+                "ar": "يوروس: شريط ثقة"
+            },
+            "icon": "sicon-award-ribbon",
+            "path": "home.eurus-trust-marquee",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-marquee-help",
+                    "value": "<div class=\"text-sm\">Scrolling or static badges row (Award-Winning, Plant-Powered, etc.).</div>"
+                },
+                {
+                    "id": "badges",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 12,
+                    "item_label": "Badge",
+                    "label": "Badges",
+                    "value": [
+                        {
+                            "badges.icon": "sicon-award-ribbon",
+                            "badges.label": {
+                                "en": "AWARD-WINNING",
+                                "ar": "حائز على جوائز"
+                            }
+                        },
+                        {
+                            "badges.icon": "sicon-leaf",
+                            "badges.label": {
+                                "en": "PLANT-POWERED",
+                                "ar": "مكونات نباتية"
+                            }
+                        },
+                        {
+                            "badges.icon": "sicon-heart",
+                            "badges.label": {
+                                "en": "CRUELTY-FREE",
+                                "ar": "لم يُختبر على الحيوانات"
+                            }
+                        },
+                        {
+                            "badges.icon": "sicon-check-circle",
+                            "badges.label": {
+                                "en": "ORGANIC",
+                                "ar": "عضوي"
+                            }
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "badges.icon",
+                            "label": "Icon class",
+                            "format": "icon",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "badges.label",
+                            "label": "Label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "id": "animate",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "Animate / scroll",
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": true
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111111",
+            "title": {
+                "en": "Eurus: Shoppable image",
+                "ar": "يوروس: صورة تفاعلية"
+            },
+            "icon": "sicon-image",
+            "path": "home.eurus-shoppable-image",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-shop-img-help",
+                    "value": "<div class=\"text-sm\">Full-width lifestyle image with hotspot product links overlaid.</div>"
+                },
+                {
+                    "id": "image",
+                    "type": "image",
+                    "format": "image",
+                    "label": "Background image",
+                    "icon": "sicon-photo",
+                    "required": true,
+                    "value": "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=1400&q=80"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Shop the look",
+                        "ar": "تسوّق الإطلالة"
+                    }
+                },
+                {
+                    "id": "hotspots",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 8,
+                    "item_label": "Hotspot",
+                    "label": "Hotspots",
+                    "value": [
+                        {
+                            "hotspots.label": {
+                                "en": "Glow Serum",
+                                "ar": "سيروم التوهج"
+                            },
+                            "hotspots.x": "30",
+                            "hotspots.y": "45",
+                            "hotspots.url": "/"
+                        },
+                        {
+                            "hotspots.label": {
+                                "en": "Day Cream",
+                                "ar": "كريم نهاري"
+                            },
+                            "hotspots.x": "65",
+                            "hotspots.y": "55",
+                            "hotspots.url": "/"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "hotspots.label",
+                            "label": "Product label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-move",
+                            "id": "hotspots.x",
+                            "label": "X position (%)",
+                            "format": "text",
+                            "required": true,
+                            "value": "50"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-move",
+                            "id": "hotspots.y",
+                            "label": "Y position (%)",
+                            "format": "text",
+                            "required": true,
+                            "value": "50"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "hotspots.url",
+                            "label": "Product URL",
+                            "format": "text",
+                            "required": false,
+                            "value": "/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111112",
+            "title": {
+                "en": "Eurus: Skin tabs",
+                "ar": "يوروس: تبويب البشرة"
+            },
+            "icon": "sicon-filter",
+            "path": "home.eurus-skin-tabs",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-skintabs-help",
+                    "value": "<div class=\"text-sm\">Tabbed section — each tab reveals a different concern / routine with image and products.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Find your routine.",
+                        "ar": "اعثر على روتينك."
+                    }
+                },
+                {
+                    "id": "tabs",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 6,
+                    "item_label": "Tab",
+                    "label": "Tabs",
+                    "value": [
+                        {
+                            "tabs.label": {
+                                "en": "Dry Skin",
+                                "ar": "بشرة جافة"
+                            },
+                            "tabs.description": {
+                                "en": "Deep hydration formulas that replenish moisture and restore softness.",
+                                "ar": "تركيبات ترطيب عميقة تعيد النعومة والرطوبة."
+                            },
+                            "tabs.image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80",
+                            "tabs.cta_label": {
+                                "en": "Shop dry skin",
+                                "ar": "تسوّق البشرة الجافة"
+                            },
+                            "tabs.cta_url": "/"
+                        },
+                        {
+                            "tabs.label": {
+                                "en": "Oily Skin",
+                                "ar": "بشرة دهنية"
+                            },
+                            "tabs.description": {
+                                "en": "Lightweight, oil-free solutions that mattify and balance.",
+                                "ar": "حلول خفيفة خالية من الزيوت لتوازن مثالي."
+                            },
+                            "tabs.image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+                            "tabs.cta_label": {
+                                "en": "Shop oily skin",
+                                "ar": "تسوّق البشرة الدهنية"
+                            },
+                            "tabs.cta_url": "/"
+                        },
+                        {
+                            "tabs.label": {
+                                "en": "Sensitive Skin",
+                                "ar": "بشرة حساسة"
+                            },
+                            "tabs.description": {
+                                "en": "Gentle, fragrance-free care that calms and protects delicate skin.",
+                                "ar": "عناية لطيفة بدون عطور تهدئ البشرة الحساسة وتحميها."
+                            },
+                            "tabs.image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80",
+                            "tabs.cta_label": {
+                                "en": "Shop sensitive skin",
+                                "ar": "تسوّق البشرة الحساسة"
+                            },
+                            "tabs.cta_url": "/"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "tabs.label",
+                            "label": "Tab label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "id": "tabs.description",
+                            "label": "Description",
+                            "multilanguage": true,
+                            "format": "textarea",
+                            "required": false
+                        },
+                        {
+                            "type": "image",
+                            "icon": "sicon-photo",
+                            "id": "tabs.image",
+                            "label": "Tab image",
+                            "format": "image",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "tabs.cta_label",
+                            "label": "CTA label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "tabs.cta_url",
+                            "label": "CTA URL",
+                            "format": "text",
+                            "required": false,
+                            "value": "/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111113",
+            "title": {
+                "en": "Eurus: Before / After",
+                "ar": "يوروس: قبل وبعد"
+            },
+            "icon": "sicon-image",
+            "path": "home.eurus-before-after",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-ba-help",
+                    "value": "<div class=\"text-sm\">Before-and-after slider with draggable divider.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Real results, real people.",
+                        "ar": "نتائج حقيقية، أشخاص حقيقيون."
+                    }
+                },
+                {
+                    "id": "pairs",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 1,
+                    "maxLength": 6,
+                    "item_label": "Pair",
+                    "label": "Before / After pairs",
+                    "value": [
+                        {
+                            "pairs.before_image": "https://images.unsplash.com/photo-1595959183082-7b570b7e1e6b?w=600&q=80",
+                            "pairs.after_image": "https://images.unsplash.com/photo-1588006173527-b98b85da4094?w=600&q=80",
+                            "pairs.caption": {
+                                "en": "4 weeks of daily use",
+                                "ar": "4 أسابيع من الاستخدام اليومي"
+                            }
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "image",
+                            "icon": "sicon-photo",
+                            "id": "pairs.before_image",
+                            "label": "Before image",
+                            "format": "image",
+                            "required": true
+                        },
+                        {
+                            "type": "image",
+                            "icon": "sicon-photo",
+                            "id": "pairs.after_image",
+                            "label": "After image",
+                            "format": "image",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "pairs.caption",
+                            "label": "Caption",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111114",
+            "title": {
+                "en": "Eurus: Video product",
+                "ar": "يوروس: فيديو منتج"
+            },
+            "icon": "sicon-video-player",
+            "path": "home.eurus-video-product",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-vidprod-help",
+                    "value": "<div class=\"text-sm\">Split layout: embedded video on one side, product info on the other.</div>"
+                },
+                {
+                    "id": "video_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "YouTube / video embed URL",
+                    "icon": "sicon-play-circle",
+                    "required": true,
+                    "placeholder": "https://www.youtube.com/embed/...",
+                    "value": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+                },
+                {
+                    "id": "video_on_right",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "Video on right side",
+                    "icon": "sicon-toggle-off",
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "eyebrow",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Eyebrow text",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": {
+                        "en": "WATCH & SHOP",
+                        "ar": "شاهد وتسوّق"
+                    }
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Title",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "See the results for yourself.",
+                        "ar": "شاهد النتائج بنفسك."
+                    }
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Description",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": {
+                        "en": "Our dermatologist-tested formula works in just 7 days.",
+                        "ar": "تركيبتنا المختبرة من أطباء الجلدية تعمل في 7 أيام فقط."
+                    }
+                },
+                {
+                    "id": "cta_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA label",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": {
+                        "en": "Shop now",
+                        "ar": "تسوّق الآن"
+                    }
+                },
+                {
+                    "id": "cta_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA URL",
+                    "icon": "sicon-link",
+                    "required": false,
+                    "value": "/"
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111115",
+            "title": {
+                "en": "Eurus: Routine steps",
+                "ar": "يوروس: خطوات الروتين"
+            },
+            "icon": "sicon-list-number",
+            "path": "home.eurus-routine-steps",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-routine-help",
+                    "value": "<div class=\"text-sm\">Numbered skincare routine cards with icons, images, and optional product links.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Your 3-step ritual.",
+                        "ar": "طقوسك في 3 خطوات."
+                    }
+                },
+                {
+                    "id": "subheading",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Sub-heading",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": {
+                        "en": "A simple routine for radiant skin — morning and night.",
+                        "ar": "روتين بسيط لبشرة مشرقة — صباحًا ومساءً."
+                    }
+                },
+                {
+                    "id": "steps",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 6,
+                    "item_label": "Step",
+                    "label": "Routine steps",
+                    "value": [
+                        {
+                            "steps.title": {
+                                "en": "Cleanse",
+                                "ar": "التنظيف"
+                            },
+                            "steps.description": {
+                                "en": "Gently remove impurities with our botanical face wash.",
+                                "ar": "أزيلي الشوائب بلطف مع غسولنا النباتي للوجه."
+                            },
+                            "steps.image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+                            "steps.icon": "sicon-drop",
+                            "steps.url": "/"
+                        },
+                        {
+                            "steps.title": {
+                                "en": "Treat",
+                                "ar": "العلاج"
+                            },
+                            "steps.description": {
+                                "en": "Apply the vitamin C serum for brightening and protection.",
+                                "ar": "ضعي سيروم فيتامين سي للتفتيح والحماية."
+                            },
+                            "steps.image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80",
+                            "steps.icon": "sicon-flask",
+                            "steps.url": "/"
+                        },
+                        {
+                            "steps.title": {
+                                "en": "Moisturise",
+                                "ar": "الترطيب"
+                            },
+                            "steps.description": {
+                                "en": "Lock in hydration with our lightweight daily cream.",
+                                "ar": "حافظي على الترطيب مع كريمنا اليومي الخفيف."
+                            },
+                            "steps.image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
+                            "steps.icon": "sicon-sun",
+                            "steps.url": "/"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "steps.title",
+                            "label": "Step title",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "id": "steps.description",
+                            "label": "Description",
+                            "multilanguage": true,
+                            "format": "textarea",
+                            "required": false
+                        },
+                        {
+                            "type": "image",
+                            "icon": "sicon-photo",
+                            "id": "steps.image",
+                            "label": "Step image",
+                            "format": "image",
+                            "required": false
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "steps.icon",
+                            "label": "Salla icon class",
+                            "format": "icon",
+                            "required": false,
+                            "value": "sicon-star"
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "steps.url",
+                            "label": "Link URL",
+                            "format": "text",
+                            "required": false,
+                            "value": "/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111116",
+            "title": {
+                "en": "Eurus: Philosophy split",
+                "ar": "يوروس: فلسفة"
+            },
+            "icon": "sicon-article",
+            "path": "home.eurus-philosophy-split",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-philo-help",
+                    "value": "<div class=\"text-sm\">Full-width split section: large image on one side, editorial brand story on the other.</div>"
+                },
+                {
+                    "id": "image",
+                    "type": "image",
+                    "format": "image",
+                    "label": "Section image",
+                    "icon": "sicon-photo",
+                    "required": false,
+                    "value": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1000&q=80"
+                },
+                {
+                    "id": "image_on_right",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "Image on right",
+                    "icon": "sicon-toggle-off",
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "eyebrow",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Eyebrow",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": {
+                        "en": "OUR PHILOSOPHY",
+                        "ar": "فلسفتنا"
+                    }
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Title",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Beauty rooted in nature.",
+                        "ar": "جمال متجذر في الطبيعة."
+                    }
+                },
+                {
+                    "id": "body",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Body text",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": {
+                        "en": "We believe in harnessing the power of botanicals, ethically sourced and crafted with care. Every formula is dermatologist-tested, cruelty-free, and designed to let your natural glow shine through.",
+                        "ar": "نؤمن بتسخير قوة النباتات، المصدرة بأخلاقية والمصنوعة بعناية. كل تركيبة مختبرة من أطباء الجلدية، ولم تُختبر على الحيوانات، ومصممة لإبراز توهجك الطبيعي."
+                    }
+                },
+                {
+                    "id": "values",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 6,
+                    "item_label": "Value",
+                    "label": "Brand values / stats",
+                    "value": [
+                        {
+                            "values.stat": "100%",
+                            "values.label": {
+                                "en": "Vegan",
+                                "ar": "نباتي"
+                            }
+                        },
+                        {
+                            "values.stat": "50+",
+                            "values.label": {
+                                "en": "Botanicals",
+                                "ar": "نبتة"
+                            }
+                        },
+                        {
+                            "values.stat": "0",
+                            "values.label": {
+                                "en": "Parabens",
+                                "ar": "بارابين"
+                            }
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-pencil-ruler",
+                            "id": "values.stat",
+                            "label": "Stat / number",
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "values.label",
+                            "label": "Label",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "id": "cta_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA label",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "required": false,
+                    "value": {
+                        "en": "Learn more",
+                        "ar": "اعرف المزيد"
+                    }
+                },
+                {
+                    "id": "cta_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "CTA URL",
+                    "icon": "sicon-link",
+                    "required": false,
+                    "value": "/"
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111117",
+            "title": {
+                "en": "Eurus: Brand timeline",
+                "ar": "يوروس: الخط الزمني"
+            },
+            "icon": "sicon-calendar-date",
+            "path": "home.eurus-brand-timeline",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-timeline-help",
+                    "value": "<div class=\"text-sm\">Vertical timeline of brand milestones.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Our journey",
+                        "ar": "رحلتنا"
+                    }
+                },
+                {
+                    "id": "milestones",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 12,
+                    "item_label": "Milestone",
+                    "label": "Milestones",
+                    "value": [
+                        {
+                            "milestones.year": "2018",
+                            "milestones.title": {
+                                "en": "The Spark",
+                                "ar": "الشرارة"
+                            },
+                            "milestones.description": {
+                                "en": "Founded in a small kitchen with a dream for clean beauty.",
+                                "ar": "تأسست في مطبخ صغير بحلم لجمال نظيف."
+                            },
+                            "milestones.image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80"
+                        },
+                        {
+                            "milestones.year": "2020",
+                            "milestones.title": {
+                                "en": "First 10K Customers",
+                                "ar": "أول 10 آلاف عميل"
+                            },
+                            "milestones.description": {
+                                "en": "Reached our first milestone thanks to word-of-mouth love.",
+                                "ar": "وصلنا لأول إنجاز بفضل توصيات العملاء."
+                            },
+                            "milestones.image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
+                        },
+                        {
+                            "milestones.year": "2023",
+                            "milestones.title": {
+                                "en": "Global Expansion",
+                                "ar": "التوسع العالمي"
+                            },
+                            "milestones.description": {
+                                "en": "Now shipping to 40+ countries with a team of 50.",
+                                "ar": "نشحن الآن إلى أكثر من 40 دولة بفريق من 50 شخصًا."
+                            },
+                            "milestones.image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-calendar-date",
+                            "id": "milestones.year",
+                            "label": "Year / date",
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "milestones.title",
+                            "label": "Title",
+                            "multilanguage": true,
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-typography",
+                            "id": "milestones.description",
+                            "label": "Description",
+                            "multilanguage": true,
+                            "format": "textarea",
+                            "required": false
+                        },
+                        {
+                            "type": "image",
+                            "icon": "sicon-photo",
+                            "id": "milestones.image",
+                            "label": "Image (optional)",
+                            "format": "image",
+                            "required": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111118",
+            "title": {
+                "en": "Eurus: Testimonials",
+                "ar": "يوروس: آراء العملاء"
+            },
+            "icon": "sicon-chat-bubbles",
+            "path": "home.eurus-testimonials-block",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-test-help",
+                    "value": "<div class=\"text-sm\">Carousel of customer testimonials with star ratings.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "What our customers say",
+                        "ar": "ماذا يقول عملاؤنا"
+                    }
+                },
+                {
+                    "id": "reviews",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 12,
+                    "item_label": "Review",
+                    "label": "Reviews",
+                    "value": [
+                        {
+                            "reviews.name": "Sarah M.",
+                            "reviews.stars": 5,
+                            "reviews.text": {
+                                "en": "This changed my entire skincare routine. My skin has never felt softer!",
+                                "ar": "غيّر روتين العناية ببشرتي بالكامل. لم تكن بشرتي بهذه النعومة من قبل!"
+                            }
+                        },
+                        {
+                            "reviews.name": "Emily R.",
+                            "reviews.stars": 5,
+                            "reviews.text": {
+                                "en": "Amazing quality products. Fast shipping and beautiful packaging.",
+                                "ar": "منتجات بجودة مذهلة. شحن سريع وتغليف جميل."
+                            }
+                        },
+                        {
+                            "reviews.name": "Layla K.",
+                            "reviews.stars": 4,
+                            "reviews.text": {
+                                "en": "I love the natural ingredients. Will definitely order again.",
+                                "ar": "أحب المكونات الطبيعية. سأطلب مجددًا بالتأكيد."
+                            }
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "string",
+                            "icon": "sicon-user",
+                            "id": "reviews.name",
+                            "label": "Customer name",
+                            "format": "text",
+                            "required": true
+                        },
+                        {
+                            "type": "number",
+                            "icon": "sicon-star",
+                            "id": "reviews.stars",
+                            "label": "Stars (1-5)",
+                            "format": "integer",
+                            "required": true,
+                            "minimum": 1,
+                            "maximum": 5,
+                            "value": 5
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-format-text-alt",
+                            "id": "reviews.text",
+                            "label": "Review text",
+                            "multilanguage": true,
+                            "format": "textarea",
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111119",
+            "title": {
+                "en": "Eurus: Social gallery",
+                "ar": "يوروس: معرض اجتماعي"
+            },
+            "icon": "sicon-instagram",
+            "path": "home.eurus-social-gallery",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-social-help",
+                    "value": "<div class=\"text-sm\">Grid of social/lifestyle images with Instagram-style links.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Section heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Follow us @yourbrand",
+                        "ar": "تابعنا @yourbrand"
+                    }
+                },
+                {
+                    "id": "social_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Social profile URL",
+                    "icon": "sicon-link",
+                    "required": false,
+                    "value": "https://instagram.com/"
+                },
+                {
+                    "id": "photos",
+                    "type": "collection",
+                    "format": "collection",
+                    "required": true,
+                    "minLength": 3,
+                    "maxLength": 12,
+                    "item_label": "Photo",
+                    "label": "Gallery photos",
+                    "value": [
+                        {
+                            "photos.image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80",
+                            "photos.url": "/"
+                        },
+                        {
+                            "photos.image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&q=80",
+                            "photos.url": "/"
+                        },
+                        {
+                            "photos.image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&q=80",
+                            "photos.url": "/"
+                        },
+                        {
+                            "photos.image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&q=80",
+                            "photos.url": "/"
+                        },
+                        {
+                            "photos.image": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80",
+                            "photos.url": "/"
+                        },
+                        {
+                            "photos.image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80",
+                            "photos.url": "/"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "image",
+                            "icon": "sicon-photo",
+                            "id": "photos.image",
+                            "label": "Photo",
+                            "format": "image",
+                            "required": true
+                        },
+                        {
+                            "type": "string",
+                            "icon": "sicon-link",
+                            "id": "photos.url",
+                            "label": "Link URL",
+                            "format": "text",
+                            "required": false,
+                            "value": "/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "a1111111-1111-4111-8111-111111111120",
+            "title": {
+                "en": "Eurus: Newsletter",
+                "ar": "يوروس: النشرة"
+            },
+            "icon": "sicon-email-send",
+            "path": "home.eurus-newsletter",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "eurus-nl-help",
+                    "value": "<div class=\"text-sm\">Email capture block using Salla's newsletter web component.</div>"
+                },
+                {
+                    "id": "heading",
+                    "type": "string",
+                    "format": "text",
+                    "label": "Heading",
+                    "multilanguage": true,
+                    "icon": "sicon-format-text-alt",
+                    "value": {
+                        "en": "Join the glow club.",
+                        "ar": "انضم لنادي التألق."
+                    }
+                },
+                {
+                    "id": "subheading",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "Sub-heading",
+                    "multilanguage": true,
+                    "icon": "sicon-typography",
+                    "required": false,
+                    "value": {
+                        "en": "Get 10% off your first order, plus early access to new drops and exclusive tips.",
+                        "ar": "احصل على خصم 10٪ على طلبك الأول، مع وصول مبكر لأحدث المنتجات ونصائح حصرية."
+                    }
+                },
+                {
+                    "id": "background_image",
+                    "type": "image",
+                    "format": "image",
+                    "label": "Background image (optional)",
+                    "icon": "sicon-photo",
+                    "required": false,
+                    "value": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=80"
+                }
+            ]
+        }
+    ],
+    "support_url": "https://salla.com/",
+    "description": {
+        "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
+        "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
+    }
+}

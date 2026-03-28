@@ -1,0 +1,53 @@
+{#
+| Variable            | Type       |
+|---------------------|------------|
+| component.image     | string     |
+| component.heading   | string     |
+| component.hotspots  | Collection |
+| position            | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-shoppable-image py-14 md:py-20"
+         data-eurus="eurus-shoppable-image"
+         aria-label="{{ component.heading|default('Shop the look') }}">
+  <div class="container px-4">
+
+    {% if component.heading %}
+      <h2 class="eurus-heading-display mb-8 text-center text-3xl font-bold text-[color:var(--eurus-ink)] md:text-4xl">
+        {{ component.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="eurus-shoppable-wrap relative mx-auto overflow-hidden rounded-[var(--eurus-radius-image)]" dir="ltr">
+
+      {# Main image #}
+      {% if component.image %}
+        <img src="{{ component.image }}"
+             alt="{{ component.heading|default('') }}"
+             class="h-auto w-full object-cover"
+             loading="lazy">
+      {% else %}
+        <div class="flex aspect-[16/9] w-full items-center justify-center bg-gray-100 text-sm text-gray-400">
+          {{ trans('eurus.shoppable.no_image') }}
+        </div>
+      {% endif %}
+
+      {# Hotspots #}
+      {% if component.hotspots|length %}
+        {% for spot in component.hotspots %}
+          <a href="{{ spot.url|default('/') }}"
+             class="eurus-hotspot group absolute flex items-center justify-center"
+             style="left: {{ spot.x|default(50) }}%; top: {{ spot.y|default(50) }}%;"
+             aria-label="{{ spot.label }}">
+            <span class="eurus-hotspot__pulse absolute h-10 w-10 rounded-full bg-white/40"></span>
+            <span class="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md">
+              <i class="sicon-plus text-xs text-[color:var(--eurus-ink)]"></i>
+            </span>
+            <span class="eurus-hotspot__label pointer-events-none absolute bottom-full mb-2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-medium text-[color:var(--eurus-ink)] opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+              {{ spot.label }}
+            </span>
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>

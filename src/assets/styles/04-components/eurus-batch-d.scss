@@ -1,0 +1,34 @@
+/**
+ * Batch D: routine steps, philosophy split, skin tabs, brand timeline.
+ */
+body.is-eurus-home {
+
+  /* ── Routine step cards ── */
+  .eurus-routine-card {
+    @apply transition-transform duration-300;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  /* ── Skin tabs: active state overrides ── */
+  .eurus-skin-tab-btn.is-active {
+    background-color: var(--eurus-ink);
+    border-color: var(--eurus-ink);
+    color: #fff;
+  }
+
+  .s-block--eurus-skin-tabs .tabs-wrapper > div.inactive {
+    display: none;
+  }
+
+  .s-block--eurus-skin-tabs .tabs-wrapper > div.is-active {
+    display: block;
+  }
+
+  /* ── Timeline ── */
+  .eurus-timeline-item {
+    @apply transition-opacity duration-300;
+  }
+}

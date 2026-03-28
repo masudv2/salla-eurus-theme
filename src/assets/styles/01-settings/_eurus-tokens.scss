@@ -1,0 +1,27 @@
+/**
+ * Eurus-inspired homepage tokens (beauty / skincare).
+ * Scoped via body.is-eurus-home on the index route.
+ */
+:root {
+  /* Surfaces */
+  --eurus-announcement: #5c634e;
+  --eurus-surface: #f7f6f2;
+  --eurus-surface-alt: #ffffff;
+  --eurus-ink: #1a1a1a;
+  --eurus-ink-muted: #5c5c5c;
+  --eurus-accent: #6b7c59;
+  --eurus-accent-soft: #8b9a7a;
+
+  /* Radii */
+  --eurus-radius-pill: 9999px;
+  --eurus-radius-card: 1.25rem;
+  --eurus-radius-image: 1.5rem;
+
+  /* Typography stacks (fallbacks; pair with theme font feature) */
+  --eurus-font-display: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --eurus-font-ui: var(--font-main), system-ui, sans-serif;
+}
+
+body.is-eurus-home {
+  --eurus-announcement: #5c634e;
+}

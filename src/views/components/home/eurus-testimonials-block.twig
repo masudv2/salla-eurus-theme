@@ -1,0 +1,66 @@
+{#
+| Variable           | Type       |
+|--------------------|------------|
+| component.heading  | string     |
+| component.reviews  | Collection |
+| position           | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-testimonials bg-[color:var(--eurus-surface)] py-14 md:py-20"
+         data-eurus="eurus-testimonials-block"
+         aria-label="{{ component.heading|default('Testimonials') }}">
+  <div class="container px-4">
+
+    {% if component.heading %}
+      <h2 class="eurus-heading-display mb-10 text-center text-3xl font-bold text-[color:var(--eurus-ink)] md:text-4xl">
+        {{ component.heading }}
+      </h2>
+    {% endif %}
+
+    {% if component.reviews|length %}
+      <salla-slider id="eurus-testimonials-slider-{{ position }}"
+                    type="carousel"
+                    loop
+                    auto-play
+                    controls="none"
+                    class="eurus-testimonials-slider">
+        <div slot="items">
+          {% for review in component.reviews %}
+            <div class="eurus-testimonial-card mx-auto flex max-w-lg flex-col items-center px-6 text-center">
+
+              {# Stars #}
+              <div class="mb-4 flex gap-1 text-[color:var(--eurus-accent)]">
+                {% for i in 1..5 %}
+                  {% if i <= (review.stars|default(5)) %}
+                    <i class="sicon-star-filled text-lg"></i>
+                  {% else %}
+                    <i class="sicon-star text-lg opacity-30"></i>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+              {# Quote #}
+              <blockquote class="text-base leading-relaxed text-[color:var(--eurus-ink)] md:text-lg">
+                "{{ review.text }}"
+              </blockquote>
+
+              {# Name #}
+              <cite class="mt-4 block text-sm font-semibold not-italic text-[color:var(--eurus-ink-muted)]">
+                — {{ review.name }}
+              </cite>
+            </div>
+          {% endfor %}
+        </div>
+
+        {# Pagination dots #}
+        <div slot="footer" class="mt-6 flex items-center justify-center gap-2">
+          {% for review in component.reviews %}
+            <button
+              class="eurus-dot h-2.5 w-2.5 rounded-full bg-[color:var(--eurus-ink)] opacity-30 transition-opacity"
+              aria-label="{{ trans('blocks.slider.go_to') }} {{ loop.index }}"></button>
+          {% endfor %}
+        </div>
+      </salla-slider>
+    {% endif %}
+
+  </div>
+</section>

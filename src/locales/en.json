@@ -1,0 +1,59 @@
+{
+  "eurus": {
+    "announcement": {
+      "region_label": "Store announcement",
+      "default": "FREE SHIPPING ON ALL ORDERS",
+      "cta": "Shop now"
+    },
+    "featured": {
+      "no_products": "Select products in the theme editor to show them here."
+    },
+    "bundle": {
+      "items": "items"
+    },
+    "countdown": {
+      "ended": "This offer has ended."
+    },
+    "shoppable": {
+      "no_image": "Upload a lifestyle image in the theme editor."
+    },
+    "video": {
+      "no_url": "Add a YouTube embed URL in the theme editor."
+    },
+    "ba": {
+      "before": "Before",
+      "after": "After"
+    },
+    "social": {
+      "follow": "Follow us"
+    }
+  },
+  "blocks": {
+    "header": {
+      "cart": "Cart"
+    },
+    "appBanner": {
+      "download_now": "download now"
+    },
+    "slider": {
+      "go_to": "Go to slide"
+    }
+  },
+  "pages": {
+    "cart": {
+      "cart_options": "Cart Options"
+    },
+    "order": {
+      "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
+      "edit_period_ended": "The period to edit the review has ended",
+      "delete_period_ended": "The period to delete the review has ended",
+      "days_since_added": "days since it was added",
+      "option_name": "Option name",
+      "option_content": "Content"
+    }
+  },
+  "common": {
+    "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
+    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
+  }
+}

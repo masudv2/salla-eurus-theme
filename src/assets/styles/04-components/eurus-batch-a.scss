@@ -1,0 +1,15 @@
+/**
+ * Batch A: hero, promo, category pills, featured row, category stats, split banner.
+ * Most layout uses Tailwind in Twig; add overrides here if needed.
+ */
+body.is-eurus-home {
+  .s-block--eurus-hero {
+    .swiper-pagination-bullet-active {
+      @apply bg-[color:var(--eurus-ink)];
+    }
+  }
+
+  .s-block--eurus-category-stats a {
+    @apply no-underline transition-opacity hover:opacity-90;
+  }
+}

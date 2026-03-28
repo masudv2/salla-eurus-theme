@@ -1,0 +1,120 @@
+/**
+ * Eurus-style header & footer — homepage only (body.is-eurus-home).
+ * Other routes keep default Theme Raed chrome.
+ */
+
+body.is-eurus-home {
+  /* --- Announcement bar (Twig: .eurus-announcement-bar) --- */
+  .eurus-announcement-bar {
+    background-color: var(--eurus-announcement);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .eurus-announcement-bar__text {
+    margin: 0;
+    letter-spacing: 0.06em;
+  }
+
+  .eurus-announcement-bar__cta {
+    text-decoration: none;
+    border-radius: var(--eurus-radius-pill);
+  }
+
+  /* --- Header shell --- */
+  .store-header--eurus-home {
+    @apply border-b border-gray-100;
+  }
+
+  .store-header--eurus-home .top-navbar {
+    @apply bg-[color:var(--eurus-surface-alt)] py-2 min-h-[44px];
+  }
+
+  .store-header--eurus-home .top-navbar .btn--rounded-gray {
+    @apply border-gray-200/80 bg-white text-xs;
+  }
+
+  .store-header--eurus-home .main-nav-container {
+    @apply shadow-none;
+    box-shadow: none !important;
+  }
+
+  .store-header--eurus-home .main-nav-container .inner {
+    @apply bg-[color:var(--eurus-surface-alt)];
+  }
+
+  .store-header--eurus-home .navbar-brand img {
+    @apply max-h-11;
+  }
+
+  .store-header--eurus-home .header-btn__icon {
+    border-radius: 9999px;
+    border-color: rgba(26, 26, 26, 0.12);
+    @apply text-[color:var(--eurus-ink)];
+  }
+
+  .store-header--eurus-home .s-search-input {
+    @apply bg-gray-100/80 border-transparent;
+  }
+
+  /* Override topnav dark mode on homepage (keep Eurus light strip) */
+  &.topnav-is-dark .store-header--eurus-home .top-navbar {
+    @apply bg-[color:var(--eurus-surface-alt)] text-[color:var(--eurus-ink)];
+
+    .btn--rounded-gray,
+    .s-search-input {
+      @apply border-gray-200/80 bg-white text-[color:var(--eurus-ink)];
+    }
+
+    .s-search-input {
+      @apply text-[color:var(--eurus-ink)];
+    }
+  }
+
+  /* --- Footer: light editorial (homepage) --- */
+  .store-footer {
+    @apply mt-12 sm:mt-20 bg-[color:var(--eurus-surface)] text-[color:var(--eurus-ink)];
+  }
+
+  .store-footer .store-footer__inner {
+    @apply border-b border-gray-200/80 bg-[color:var(--eurus-surface)] py-10 lg:py-14;
+  }
+
+  .store-footer h3 {
+    @apply text-[color:var(--eurus-ink)];
+  }
+
+  .store-footer a {
+    @apply text-[color:var(--eurus-ink)];
+  }
+
+  .store-footer .social-link {
+    @apply border-gray-300 text-[color:var(--eurus-ink)];
+  }
+
+  .store-footer .contact-social {
+    @apply border-gray-200;
+  }
+
+  .store-footer .copyright-text {
+    @apply text-[color:var(--eurus-ink-muted)];
+  }
+
+  .store-footer .copyright-text p {
+    @apply text-[color:var(--eurus-ink-muted)];
+  }
+
+  .store-footer .text-text-grey {
+    @apply text-[color:var(--eurus-ink-muted)];
+  }
+
+  /* Win over footer-is-dark / footer-is-light utility classes on body */
+  &.footer-is-dark .store-footer,
+  &.footer-is-light .store-footer {
+    @apply bg-[color:var(--eurus-surface)] text-[color:var(--eurus-ink)];
+  }
+
+  &.footer-is-dark .store-footer .store-footer__inner,
+  &.footer-is-light .store-footer .store-footer__inner {
+    @apply border-gray-200/80 bg-[color:var(--eurus-surface)];
+  }
+}

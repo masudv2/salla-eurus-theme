@@ -1,0 +1,67 @@
+{#
+| Variable              | Type        |
+|-----------------------|-------------|
+| component.heading     | string      |
+| component.description | string      |
+| component.steps       | Collection  |
+| component.tiers       | Collection  |
+| position              | int         |
+#}
+<section class="s-block s-block--eurus s-block--eurus-bundle-builder bg-[color:var(--eurus-surface-alt)] py-14 md:py-20"
+         data-eurus="eurus-bundle-builder"
+         aria-label="{{ component.heading|default('Bundle') }}">
+  <div class="container px-4">
+
+    {# ── Header ── #}
+    <div class="mx-auto mb-10 max-w-2xl text-center">
+      {% if component.heading %}
+        <h2 class="eurus-heading-display text-3xl font-bold leading-tight text-[color:var(--eurus-ink)] md:text-4xl">
+          {{ component.heading }}
+        </h2>
+      {% endif %}
+      {% if component.description %}
+        <p class="mt-3 text-sm leading-relaxed text-[color:var(--eurus-ink-muted)] md:text-base">
+          {{ component.description }}
+        </p>
+      {% endif %}
+    </div>
+
+    {# ── Discount tier badges ── #}
+    {% if component.tiers|length %}
+      <div class="mb-10 flex flex-wrap items-center justify-center gap-3">
+        {% for tier in component.tiers %}
+          <span class="eurus-tier-badge inline-flex items-center gap-1.5 rounded-full border border-[color:var(--eurus-accent)] px-4 py-1.5 text-xs font-medium text-[color:var(--eurus-accent)]">
+            <i class="sicon-check-circle text-sm"></i>
+            {{ tier.min_items }}+ {{ trans('eurus.bundle.items') }} — {{ tier.label }}
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {# ── Step cards ── #}
+    {% if component.steps|length %}
+      <div class="grid gap-6 md:grid-cols-{{ component.steps|length > 3 ? 3 : component.steps|length }}">
+        {% for step in component.steps %}
+          <div class="eurus-step-card group relative overflow-hidden rounded-[var(--eurus-radius-card)] border border-gray-200 bg-white p-6 text-center transition-shadow hover:shadow-lg">
+
+            {# Step number badge #}
+            <span class="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--eurus-accent)] text-sm font-bold text-white">
+              {{ loop.index }}
+            </span>
+
+            {# Icon #}
+            {% if step.icon %}
+              <i class="{{ step.icon }} mb-3 text-3xl text-[color:var(--eurus-accent)]"></i>
+            {% endif %}
+
+            {# Label #}
+            <h3 class="text-base font-semibold text-[color:var(--eurus-ink)]">
+              {{ step.label|default('Step ' ~ loop.index) }}
+            </h3>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>

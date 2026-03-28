@@ -1,0 +1,22 @@
+/**
+ * Eurus homepage section shells — extend per block as implementation progresses.
+ */
+body.is-eurus-home {
+  .s-block--eurus {
+    @apply w-full;
+  }
+
+  .eurus-container {
+    @apply container mx-auto px-4;
+  }
+
+  .eurus-pill-btn {
+    @apply inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-medium transition-colors;
+    border-color: var(--eurus-ink);
+    border-radius: var(--eurus-radius-pill);
+  }
+
+  .eurus-heading-display {
+    font-family: var(--eurus-font-display);
+  }
+}

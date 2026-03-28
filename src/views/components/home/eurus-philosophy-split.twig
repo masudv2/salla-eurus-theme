@@ -1,0 +1,83 @@
+{#
+| Variable                | Type       |
+|-------------------------|------------|
+| component.image         | string     |
+| component.image_on_right| boolean    |
+| component.eyebrow      | string     |
+| component.title         | string     |
+| component.body          | string     |
+| component.values        | Collection |
+| component.cta_label     | string     |
+| component.cta_url       | string     |
+| position                | int        |
+#}
+{% set img_order = component.image_on_right ? 'md:order-2 rtl:md:order-1' : 'rtl:md:order-2' %}
+{% set txt_order = component.image_on_right ? 'md:order-1 rtl:md:order-2' : 'rtl:md:order-1' %}
+
+<section class="s-block s-block--eurus s-block--eurus-philosophy-split bg-[color:var(--eurus-surface)] py-14 md:py-20"
+         data-eurus="eurus-philosophy-split"
+         aria-label="{{ component.title|default('Philosophy') }}">
+  <div class="container px-4">
+    <div class="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+
+      {# ── Image ── #}
+      <div class="{{ img_order }}">
+        {% if component.image %}
+          <img src="{{ component.image }}"
+               alt="{{ component.title|default('') }}"
+               class="h-auto w-full rounded-[var(--eurus-radius-image)] object-cover"
+               loading="lazy">
+        {% else %}
+          <div class="flex aspect-[4/5] w-full items-center justify-center rounded-[var(--eurus-radius-image)] bg-gray-100 text-sm text-gray-400">
+            <i class="sicon-photo text-4xl"></i>
+          </div>
+        {% endif %}
+      </div>
+
+      {# ── Text content ── #}
+      <div class="{{ txt_order }} flex flex-col">
+        {% if component.eyebrow %}
+          <span class="mb-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--eurus-accent)]">
+            {{ component.eyebrow }}
+          </span>
+        {% endif %}
+
+        {% if component.title %}
+          <h2 class="eurus-heading-display text-3xl font-bold leading-tight text-[color:var(--eurus-ink)] md:text-4xl">
+            {{ component.title }}
+          </h2>
+        {% endif %}
+
+        {% if component.body %}
+          <p class="mt-4 text-sm leading-relaxed text-[color:var(--eurus-ink-muted)] md:text-base">
+            {{ component.body }}
+          </p>
+        {% endif %}
+
+        {# Brand values / stats row #}
+        {% if component.values|length %}
+          <div class="mt-8 flex flex-wrap gap-8">
+            {% for val in component.values %}
+              <div class="text-center">
+                <span class="block text-2xl font-bold text-[color:var(--eurus-accent)] md:text-3xl">
+                  {{ val.stat }}
+                </span>
+                <span class="mt-1 block text-xs uppercase tracking-wider text-[color:var(--eurus-ink-muted)]">
+                  {{ val.label }}
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if component.cta_label %}
+          <a href="{{ component.cta_url|default('/') }}"
+             class="eurus-pill-btn mt-8 self-start bg-[color:var(--eurus-ink)] text-white hover:opacity-90">
+            {{ component.cta_label }}
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>

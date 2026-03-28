@@ -1,0 +1,45 @@
+{#
+| Variable                    | Type   |
+|-----------------------------|--------|
+| component.heading           | string |
+| component.subheading        | string |
+| component.background_image  | string |
+| position                    | int    |
+#}
+<section class="s-block s-block--eurus s-block--eurus-newsletter relative overflow-hidden py-16 md:py-24"
+         data-eurus="eurus-newsletter"
+         aria-label="{{ component.heading|default('Newsletter') }}"
+         style="background-color: var(--eurus-announcement);">
+
+  {# Optional background image #}
+  {% if component.background_image %}
+    <img src="{{ component.background_image }}"
+         alt=""
+         aria-hidden="true"
+         class="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-luminosity"
+         loading="lazy">
+  {% endif %}
+
+  <div class="container relative z-10 px-4">
+    <div class="mx-auto flex max-w-xl flex-col items-center text-center">
+
+      {% if component.heading %}
+        <h2 class="eurus-heading-display text-3xl font-bold leading-tight text-white md:text-4xl">
+          {{ component.heading }}
+        </h2>
+      {% endif %}
+
+      {% if component.subheading %}
+        <p class="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
+          {{ component.subheading }}
+        </p>
+      {% endif %}
+
+      {# Salla newsletter web component #}
+      <div class="mt-8 w-full max-w-md">
+        <salla-newsletter class="eurus-newsletter-form"></salla-newsletter>
+      </div>
+
+    </div>
+  </div>
+</section>

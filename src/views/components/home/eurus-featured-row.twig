@@ -1,0 +1,27 @@
+{#
+| Variable           | Type       |
+|--------------------|------------|
+| component.products | Product[]  |
+| position           | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-featured-row bg-[color:var(--eurus-surface-alt)] py-12 md:py-16">
+  <div class="container px-4">
+    <div class="mb-8 text-center md:text-left rtl:md:text-right">
+      {% if component.title %}
+        <h2 class="text-2xl font-bold text-[color:var(--eurus-ink)] md:text-3xl">{{ component.title }}</h2>
+      {% endif %}
+      {% if component.subtitle %}
+        <p class="mt-2 text-sm text-[color:var(--eurus-ink-muted)]">{{ component.subtitle }}</p>
+      {% endif %}
+    </div>
+    {% if component.products|length %}
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+        {% for product in component.products %}
+          <custom-salla-product-card product="{{ product }}"></custom-salla-product-card>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center text-sm text-gray-500">{{ trans('eurus.featured.no_products') }}</p>
+    {% endif %}
+  </div>
+</section>

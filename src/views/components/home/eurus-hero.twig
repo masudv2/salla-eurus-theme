@@ -1,0 +1,74 @@
+{#
+| Variable              | Type     |
+|-----------------------|----------|
+| component.slides[]    | object[] |
+| position              | int      |
+#}
+<section class="s-block s-block--eurus s-block--eurus-hero s-block--full-bg overflow-hidden bg-[color:var(--eurus-surface)]">
+    {% if component.slides|length %}
+    <salla-slider
+      id="eurus-hero-{{ position }}"
+      auto-play
+      static-when-single
+      slider-config='{"lazy":"false"}'
+      {{ component.slides|length > 1 ? '' : 'show-controls="false"' }}
+      type="fullwidth">
+      <div slot="items">
+        {% for slide in component.slides %}
+          <div class="swiper-slide !h-auto">
+            <div class="flex min-h-[420px] flex-col lg:min-h-[520px] lg:flex-row">
+              <div
+                class="relative min-h-[240px] flex-1 bg-cover bg-center lg:min-h-0 lg:w-1/2"
+                style="background-image: url({{ slide.image }});"
+              >
+                {% if not slide.without_overlay %}
+                  <div class="absolute inset-0 bg-black/20"></div>
+                {% endif %}
+              </div>
+              <div class="flex flex-1 flex-col justify-center bg-[color:var(--eurus-surface)] px-6 py-10 text-center lg:w-1/2 lg:px-12 lg:text-left rtl:lg:text-right">
+                {% if slide.eyebrow %}
+                  <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--eurus-ink)]">
+                    {{ slide.eyebrow }}
+                  </p>
+                {% endif %}
+                {% if slide.title %}
+                  <h2 class="text-3xl font-bold leading-tight text-[color:var(--eurus-ink)] md:text-4xl lg:text-5xl">
+                    {{ slide.title }}
+                  </h2>
+                {% endif %}
+                {% if slide.title_accent %}
+                  <p class="eurus-heading-display mt-1 text-3xl italic text-[color:var(--eurus-accent)] md:text-4xl lg:text-5xl">
+                    {{ slide.title_accent }}
+                  </p>
+                {% endif %}
+                {% if slide.description %}
+                  <p class="mt-4 max-w-lg text-sm leading-relaxed text-[color:var(--eurus-ink-muted)] lg:mx-0 mx-auto">
+                    {{ slide.description }}
+                  </p>
+                {% endif %}
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start rtl:lg:justify-end">
+                  {% if slide.cta_primary and slide.cta_primary_url %}
+                    <a
+                      href="{{ slide.cta_primary_url }}"
+                      class="inline-flex min-w-[140px] items-center justify-center rounded-full border-2 border-[color:var(--eurus-ink)] px-6 py-3 text-sm font-semibold text-[color:var(--eurus-ink)] transition-colors hover:bg-[color:var(--eurus-ink)] hover:text-white"
+                    >
+                      {{ slide.cta_primary }}
+                    </a>
+                  {% endif %}
+                  {% if slide.cta_secondary and slide.cta_secondary_url %}
+                    <a
+                      href="{{ slide.cta_secondary_url }}"
+                      class="inline-flex min-w-[140px] items-center justify-center rounded-full bg-[color:var(--eurus-ink)] px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    >
+                      {{ slide.cta_secondary }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </salla-slider>
+    {% endif %}
+</section>

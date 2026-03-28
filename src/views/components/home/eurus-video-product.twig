@@ -1,0 +1,71 @@
+{#
+| Variable                | Type    |
+|-------------------------|---------|
+| component.video_url     | string  |
+| component.video_on_right| boolean |
+| component.eyebrow      | string  |
+| component.title         | string  |
+| component.description   | string  |
+| component.cta_label     | string  |
+| component.cta_url       | string  |
+| position                | int     |
+#}
+{% set vid_order = component.video_on_right ? 'md:order-2 rtl:md:order-1' : 'rtl:md:order-2' %}
+{% set txt_order = component.video_on_right ? 'md:order-1 rtl:md:order-2' : 'rtl:md:order-1' %}
+
+<section class="s-block s-block--eurus s-block--eurus-video-product bg-[color:var(--eurus-surface-alt)] py-14 md:py-20"
+         data-eurus="eurus-video-product"
+         aria-label="{{ component.title|default('Video') }}">
+  <div class="container px-4">
+    <div class="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+
+      {# ── Video ── #}
+      <div class="{{ vid_order }}">
+        {% if component.video_url %}
+          <div class="eurus-video-wrap relative aspect-video w-full overflow-hidden rounded-[var(--eurus-radius-image)]">
+            <iframe src="{{ component.video_url }}"
+                    class="absolute inset-0 h-full w-full"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                    title="{{ component.title|default('Video') }}"></iframe>
+          </div>
+        {% else %}
+          <div class="flex aspect-video w-full items-center justify-center rounded-[var(--eurus-radius-image)] bg-gray-100 text-sm text-gray-400">
+            {{ trans('eurus.video.no_url') }}
+          </div>
+        {% endif %}
+      </div>
+
+      {# ── Text ── #}
+      <div class="{{ txt_order }} flex flex-col items-start">
+        {% if component.eyebrow %}
+          <span class="mb-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--eurus-accent)]">
+            {{ component.eyebrow }}
+          </span>
+        {% endif %}
+
+        {% if component.title %}
+          <h2 class="eurus-heading-display text-3xl font-bold leading-tight text-[color:var(--eurus-ink)] md:text-4xl">
+            {{ component.title }}
+          </h2>
+        {% endif %}
+
+        {% if component.description %}
+          <p class="mt-4 text-sm leading-relaxed text-[color:var(--eurus-ink-muted)] md:text-base">
+            {{ component.description }}
+          </p>
+        {% endif %}
+
+        {% if component.cta_label %}
+          <a href="{{ component.cta_url|default('/') }}"
+             class="eurus-pill-btn mt-6 bg-[color:var(--eurus-ink)] text-white hover:opacity-90">
+            {{ component.cta_label }}
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+{#
+| Variable              | Type       |
+|-----------------------|------------|
+| component.heading     | string     |
+| component.subheading  | string     |
+| component.steps       | Collection |
+| position              | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-routine-steps bg-[color:var(--eurus-surface-alt)] py-14 md:py-20"
+         data-eurus="eurus-routine-steps"
+         aria-label="{{ component.heading|default('Routine') }}">
+  <div class="container px-4">
+
+    {# ── Header ── #}
+    <div class="mx-auto mb-12 max-w-2xl text-center">
+      {% if component.heading %}
+        <h2 class="eurus-heading-display text-3xl font-bold leading-tight text-[color:var(--eurus-ink)] md:text-4xl">
+          {{ component.heading }}
+        </h2>
+      {% endif %}
+      {% if component.subheading %}
+        <p class="mt-3 text-sm leading-relaxed text-[color:var(--eurus-ink-muted)] md:text-base">
+          {{ component.subheading }}
+        </p>
+      {% endif %}
+    </div>
+
+    {# ── Step cards ── #}
+    {% if component.steps|length %}
+      <div class="grid gap-8 md:grid-cols-{{ component.steps|length > 3 ? 3 : component.steps|length }} lg:gap-10">
+        {% for step in component.steps %}
+          <a href="{{ step.url|default('/') }}"
+             class="eurus-routine-card group flex flex-col items-center text-center no-underline">
+
+            {# Image or icon fallback #}
+            <div class="relative mb-6 aspect-[4/5] w-full max-w-xs overflow-hidden rounded-[var(--eurus-radius-image)] bg-gray-100">
+              {% if step.image %}
+                <img src="{{ step.image }}"
+                     alt="{{ step.title|default('') }}"
+                     class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                     loading="lazy">
+              {% else %}
+                <div class="flex h-full w-full items-center justify-center">
+                  <i class="{{ step.icon|default('sicon-star') }} text-5xl text-[color:var(--eurus-accent)] opacity-60"></i>
+                </div>
+              {% endif %}
+
+              {# Step number badge #}
+              <span class="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--eurus-accent)] text-xs font-bold text-white shadow-md rtl:left-auto rtl:right-4">
+                {{ loop.index }}
+              </span>
+            </div>
+
+            {# Title #}
+            {% if step.title %}
+              <h3 class="text-lg font-semibold text-[color:var(--eurus-ink)]">{{ step.title }}</h3>
+            {% endif %}
+
+            {# Description #}
+            {% if step.description %}
+              <p class="mt-2 text-sm leading-relaxed text-[color:var(--eurus-ink-muted)]">
+                {{ step.description }}
+              </p>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>

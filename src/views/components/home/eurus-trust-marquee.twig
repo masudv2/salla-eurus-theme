@@ -1,0 +1,34 @@
+{#
+| Variable           | Type       |
+|--------------------|------------|
+| component.badges   | Collection |
+| component.animate  | boolean    |
+| position           | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-trust-marquee overflow-hidden border-y border-gray-200 bg-[color:var(--eurus-surface)] py-4"
+         data-eurus="eurus-trust-marquee"
+         aria-label="Trust badges">
+  <div class="{{ component.animate ? 'eurus-marquee-track' : 'container px-4' }}">
+    <div class="{{ component.animate ? 'eurus-marquee-inner flex gap-10 whitespace-nowrap' : 'flex flex-wrap items-center justify-center gap-6 md:gap-10' }}">
+
+      {# Render badges; duplicate set for seamless marquee loop #}
+      {% for pass in component.animate ? [1,2] : [1] %}
+        {% for badge in component.badges %}
+          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[color:var(--eurus-ink-muted)] md:text-sm"
+                {% if pass == 2 %}aria-hidden="true"{% endif %}>
+            {% if badge.icon %}
+              <i class="{{ badge.icon }} text-base text-[color:var(--eurus-accent)]"></i>
+            {% endif %}
+            {{ badge.label }}
+          </span>
+
+          {# Dot separator #}
+          {% if not loop.last or pass == 1 %}
+            <span class="text-[color:var(--eurus-accent-soft)] select-none" {% if pass == 2 %}aria-hidden="true"{% endif %}>·</span>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

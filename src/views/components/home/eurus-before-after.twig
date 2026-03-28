@@ -1,0 +1,66 @@
+{#
+| Variable           | Type       |
+|--------------------|------------|
+| component.heading  | string     |
+| component.pairs    | Collection |
+| position           | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-before-after bg-[color:var(--eurus-surface)] py-14 md:py-20"
+         data-eurus="eurus-before-after"
+         aria-label="{{ component.heading|default('Before / After') }}">
+  <div class="container px-4">
+
+    {% if component.heading %}
+      <h2 class="eurus-heading-display mb-10 text-center text-3xl font-bold text-[color:var(--eurus-ink)] md:text-4xl">
+        {{ component.heading }}
+      </h2>
+    {% endif %}
+
+    {% if component.pairs|length %}
+      <div class="grid gap-8 md:grid-cols-{{ component.pairs|length > 2 ? 3 : component.pairs|length }} lg:gap-10">
+        {% for pair in component.pairs %}
+          <div class="eurus-ba-card group relative mx-auto w-full max-w-md overflow-hidden rounded-[var(--eurus-radius-card)]"
+               data-eurus-ba="{{ loop.index0 }}">
+
+            {# Stacked images with range slider overlay #}
+            <div class="eurus-ba-images relative aspect-[3/4] w-full select-none overflow-hidden bg-gray-100" dir="ltr">
+              {% if pair.after_image %}
+                <img src="{{ pair.after_image }}" alt="After"
+                     class="absolute inset-0 h-full w-full object-cover" loading="lazy">
+              {% endif %}
+
+              <div class="eurus-ba-before absolute inset-0 overflow-hidden" style="width:50%">
+                {% if pair.before_image %}
+                  <img src="{{ pair.before_image }}" alt="Before"
+                       class="h-full w-full object-cover" style="width: var(--eurus-ba-full-w, 100cqw); max-width: none;" loading="lazy">
+                {% endif %}
+              </div>
+
+              {# Divider line #}
+              <div class="eurus-ba-divider absolute inset-y-0 z-10 w-0.5 bg-white shadow" style="left:50%">
+                <span class="absolute left-1/2 top-1/2 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md">
+                  <i class="sicon-arrow-left text-[10px] text-[color:var(--eurus-ink)]"></i>
+                  <i class="sicon-arrow-right text-[10px] text-[color:var(--eurus-ink)]"></i>
+                </span>
+              </div>
+
+              {# Range input for drag #}
+              <input type="range" min="0" max="100" value="50"
+                     class="eurus-ba-range absolute inset-0 z-20 h-full w-full cursor-ew-resize opacity-0"
+                     aria-label="Before and after comparison">
+
+              {# Labels #}
+              <span class="absolute bottom-3 left-3 rtl:left-auto rtl:right-3 z-10 rounded-full bg-black/50 px-2 py-0.5 text-[10px] font-bold uppercase text-white">{{ trans('eurus.ba.before') }}</span>
+              <span class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 z-10 rounded-full bg-black/50 px-2 py-0.5 text-[10px] font-bold uppercase text-white">{{ trans('eurus.ba.after') }}</span>
+            </div>
+
+            {% if pair.caption %}
+              <p class="mt-3 text-center text-sm text-[color:var(--eurus-ink-muted)]">{{ pair.caption }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>

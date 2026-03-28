@@ -1,0 +1,63 @@
+{#
+| Variable               | Type       |
+|------------------------|------------|
+| component.heading      | string     |
+| component.milestones   | Collection |
+| position               | int        |
+#}
+<section class="s-block s-block--eurus s-block--eurus-brand-timeline bg-[color:var(--eurus-surface)] py-14 md:py-20"
+         data-eurus="eurus-brand-timeline"
+         aria-label="{{ component.heading|default('Timeline') }}">
+  <div class="container px-4">
+
+    {% if component.heading %}
+      <h2 class="eurus-heading-display mb-12 text-center text-3xl font-bold text-[color:var(--eurus-ink)] md:text-4xl">
+        {{ component.heading }}
+      </h2>
+    {% endif %}
+
+    {% if component.milestones|length %}
+      <div class="eurus-timeline relative mx-auto max-w-3xl">
+
+        {# Vertical line #}
+        <div class="absolute left-4 top-0 h-full w-px bg-[color:var(--eurus-accent)]/30 md:left-1/2 md:-translate-x-1/2 rtl:left-auto rtl:right-4 rtl:md:right-1/2 rtl:md:translate-x-1/2"
+             aria-hidden="true"></div>
+
+        {% for ms in component.milestones %}
+          {% set is_even = loop.index0 is even %}
+          <div class="eurus-timeline-item relative mb-12 flex items-start gap-6 pl-12 last:mb-0 md:pl-0 rtl:pr-12 rtl:pl-0 md:rtl:pr-0
+                      {{ is_even ? 'md:flex-row-reverse rtl:md:flex-row md:text-right rtl:md:text-left' : 'md:text-left rtl:md:text-right rtl:md:flex-row-reverse' }}">
+
+            {# Dot on the line #}
+            <div class="absolute left-2.5 top-1 h-3 w-3 rounded-full border-2 border-[color:var(--eurus-accent)] bg-white md:left-1/2 md:-translate-x-1/2 rtl:left-auto rtl:right-2.5 rtl:md:right-1/2 rtl:md:translate-x-1/2"
+                 aria-hidden="true"></div>
+
+            {# Content card — takes one half #}
+            <div class="w-full md:w-[calc(50%-2rem)]">
+              <span class="mb-1 block text-xs font-bold uppercase tracking-widest text-[color:var(--eurus-accent)]">
+                {{ ms.year }}
+              </span>
+
+              <h3 class="text-lg font-semibold text-[color:var(--eurus-ink)]">{{ ms.title }}</h3>
+
+              {% if ms.description %}
+                <p class="mt-2 text-sm leading-relaxed text-[color:var(--eurus-ink-muted)]">
+                  {{ ms.description }}
+                </p>
+              {% endif %}
+
+              {% if ms.image %}
+                <img src="{{ ms.image }}"
+                     alt="{{ ms.title|default('') }}"
+                     class="mt-4 h-auto w-full rounded-[var(--eurus-radius-card)] object-cover"
+                     loading="lazy">
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+    {% endif %}
+
+  </div>
+</section>

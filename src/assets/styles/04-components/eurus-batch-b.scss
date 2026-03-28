@@ -1,0 +1,67 @@
+/**
+ * Batch B: product grid, countdown sale, bundle builder, trust marquee.
+ */
+body.is-eurus-home {
+
+  /* ── Countdown digits ── */
+  .eurus-countdown__digit {
+    min-width: 3ch;
+    text-align: center;
+  }
+
+  /* ── Bundle builder step cards ── */
+  .eurus-step-card {
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .eurus-tier-badge {
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--eurus-accent);
+      color: #fff;
+    }
+  }
+
+  /* ── Trust marquee ── */
+  .eurus-marquee-track {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .eurus-marquee-inner {
+    animation: eurusMarquee 30s linear infinite;
+  }
+
+  @keyframes eurusMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  [dir='rtl'] .eurus-marquee-inner {
+    animation-name: eurusMarqueeRtl;
+  }
+
+  @keyframes eurusMarqueeRtl {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eurus-marquee-inner {
+      animation: none;
+    }
+  }
+}

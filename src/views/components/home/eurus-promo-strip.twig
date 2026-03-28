@@ -1,0 +1,40 @@
+{#
+| Variable   | Type   |
+|------------|--------|
+| component  | object |
+| position   | int    |
+#}
+<section class="s-block s-block--eurus s-block--eurus-promo-strip bg-[color:var(--eurus-surface-alt)] py-12 md:py-16">
+  <div class="container max-w-3xl px-4 text-center">
+    {% if component.eyebrow %}
+      <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--eurus-ink-muted)]">
+        {{ component.eyebrow }}
+      </p>
+    {% endif %}
+    {% if component.heading %}
+      <h2 class="text-3xl font-bold text-[color:var(--eurus-ink)] md:text-4xl">
+        {{ component.heading }}
+      </h2>
+    {% endif %}
+    {% if component.heading_accent %}
+      <p class="eurus-heading-display mt-2 text-3xl text-[color:var(--eurus-accent)] md:text-4xl">
+        {{ component.heading_accent }}
+      </p>
+    {% endif %}
+    {% if component.body %}
+      <p class="mt-6 text-base leading-relaxed text-[color:var(--eurus-ink-muted)]">
+        {{ component.body }}
+      </p>
+    {% endif %}
+    {% if component.cta_label and component.cta_url %}
+      <div class="mt-8">
+        <a
+          href="{{ component.cta_url }}"
+          class="inline-flex items-center justify-center rounded-full bg-[color:var(--eurus-ink)] px-8 py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition-opacity hover:opacity-90"
+        >
+          {{ component.cta_label }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,95 @@
+{# Built-in Eurus homepage demo — shown when "theme editor only" is OFF.
+   Uses the same Twig components as merchant blocks; no dependency on saved homepage JSON. #}
+
+{% include 'components/home/eurus-hero.twig' with {
+  position: 1,
+  component: {
+    slides: [
+      {
+        image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=80',
+        eyebrow: 'UP TO 50% OFF',
+        title: 'Mastering the',
+        title_accent: 'art of skin care.',
+        description: 'Discover curated routines for radiant skin.',
+        cta_primary: 'New Arrival',
+        cta_secondary: 'Shop All',
+        cta_primary_url: '/',
+        cta_secondary_url: '/',
+        without_overlay: true
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=1200&q=80',
+        eyebrow: 'NEW ARRIVAL',
+        title: 'Glow from',
+        title_accent: 'within.',
+        description: 'Plant-powered serums for healthy skin.',
+        cta_primary: 'Shop serums',
+        cta_secondary: 'Our story',
+        cta_primary_url: '/collections',
+        cta_secondary_url: '/pages/about-us',
+        without_overlay: false
+      }
+    ]
+  }
+} %}
+
+{% include 'components/home/eurus-promo-strip.twig' with {
+  position: 2,
+  component: {
+    eyebrow: 'LIMITED TIME',
+    heading: 'Your skin deserves',
+    heading_accent: 'clinical care.',
+    body: 'Dermatologist-tested formulas, crafted for daily radiance.',
+    cta_label: 'SHOP BESTSELLERS',
+    cta_url: '/collections'
+  }
+} %}
+
+{% include 'components/home/eurus-category-pills.twig' with {
+  position: 3,
+  component: {
+    section_title: 'Shop by category',
+    pills: [
+      { label: 'Serums', url: '/categories', image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=200&h=200&fit=crop' },
+      { label: 'Cleansers', url: '/categories', image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4e571?w=200&h=200&fit=crop' },
+      { label: 'Moisturizers', url: '/categories', image: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=200&h=200&fit=crop' },
+      { label: 'Sun care', url: '/categories', image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=200&h=200&fit=crop' }
+    ]
+  }
+} %}
+
+{% include 'components/home/eurus-featured-row.twig' with {
+  position: 4,
+  component: {
+    title: 'Staff picks',
+    subtitle: 'Products our team uses daily.'
+  }
+} %}
+
+{% include 'components/home/eurus-product-grid.twig' with {
+  position: 5,
+  component: {
+    title: 'Trending now',
+    subtitle: 'Most loved by customers this week.'
+  }
+} %}
+
+{% include 'components/home/eurus-countdown-sale.twig' with {
+  position: 6,
+  component: {
+    heading: 'Flash sale',
+    subheading: 'Ends soon — don’t miss it.',
+    end_date: '2026-12-31T23:59:59',
+    cta_label: 'Shop the sale',
+    cta_url: '/categories'
+  }
+} %}
+
+{% include 'components/home/eurus-newsletter.twig' with {
+  position: 7,
+  component: {
+    heading: 'Join the glow club.',
+    subheading: 'Get 10% off your first order and early access to new drops.',
+    background_image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=80'
+  }
+} %}

@@ -267,6 +267,16 @@
                 "en": "FREE SHIPPING ON ALL ORDERS",
                 "ar": "شحن مجاني على جميع الطلبات"
             }
+        },
+        {
+            "type": "boolean",
+            "id": "eurus_use_editor_homepage",
+            "label": "الصفحة الرئيسية: محرر الثيم فقط (بدون العرض التجريبي المدمج)",
+            "description": "When enabled, the homepage only shows blocks you add in the theme editor (may be empty until you add sections). When disabled, the full built-in Eurus demo homepage is shown — recommended for preview and until you configure blocks.",
+            "format": "switch",
+            "icon": "sicon-layout-grid-rearrange",
+            "value": false,
+            "selected": false
         }
     ],
     "components": [
